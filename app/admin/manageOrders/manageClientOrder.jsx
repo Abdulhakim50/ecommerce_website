@@ -11,8 +11,9 @@ import { useRouter } from "next/navigation"
 import firebaseApp from "@/libs/firebase"
 import formatPrice from "@/utils/formatPrice"
 import { useCallback } from "react"
-import { MdDeliveryDining, MdRemoveRedEye } from "react-icons/Md"
-import { MdDone } from "react-icons/Md"
+import {  MdRemoveRedEye } from "react-icons/md/MdRemoveRedEye"
+import { MdDeliveryDining } from "react-icons/md/MdDeliveryDining"
+import { MdDone } from "react-icons/md/MdDone"
 
 
 const ManageClientOrders = ({ orders }) => {

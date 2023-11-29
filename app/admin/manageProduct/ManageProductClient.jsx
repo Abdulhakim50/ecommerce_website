@@ -10,9 +10,9 @@ import firebaseApp from "@/libs/firebase"
 import { getStorage } from "firebase/storage"
 import formatPrice from "@/utils/formatPrice"
 import { useCallback } from "react"
-import { MdDelete } from "react-icons/Md"
- import { MdLegendToggle } from "react-icons/Md"
-import { MdViewColumn } from "react-icons/Md"
+import { MdDelete } from "react-icons/md/MdDelete"
+ import { MdLegendToggle } from "react-icons/md/MdLegendToggle"
+import { MdViewColumn } from "react-icons/md/MdViewColumn"
 import { deleteObject } from "firebase/storage"
 
 

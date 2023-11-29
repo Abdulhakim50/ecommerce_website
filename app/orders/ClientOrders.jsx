@@ -7,7 +7,7 @@ import toast from "react-hot-toast"
 import axios from "axios"
 import moment from "moment"
 import formatPrice from '@/utils/formatPrice'
-import { MdRemoveRedEye } from 'react-icons/Md'
+import { MdRemoveRedEye } from 'react-icons/md/MdRemoveRedEye'
 
 
 
