@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  box-sizing: border-box;
+}
+.cart{
+  position: absolute;
+  top: 21px;
+  left: 1395px;
+  
+}
+.arrow{
+position: absolute;
+top:10px;
+left: 360px;
+}
+.limg{
+  background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')
+}
