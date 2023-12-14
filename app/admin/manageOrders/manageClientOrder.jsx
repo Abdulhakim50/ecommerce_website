@@ -11,9 +11,8 @@ import { useRouter } from "next/navigation"
 import firebaseApp from "@/libs/firebase"
 import formatPrice from "@/utils/formatPrice"
 import { useCallback } from "react"
-import {  MdRemoveRedEye } from "react-icons/md/MdRemoveRedEye"
-import { MdDeliveryDining } from "react-icons/md/MdDeliveryDining"
-import { MdDone } from "react-icons/md/MdDone"
+import { MdDeliveryDining, MdRemoveRedEye } from "react-icons/md"
+import { MdDone } from "react-icons/md"
 
 
 const ManageClientOrders = ({ orders }) => {
@@ -127,17 +126,17 @@ const ManageClientOrders = ({ orders }) => {
 
 
     return (
-        <div>
+        <div className="">
 
-            <div>
-                <p>manageOrder</p>
+            <div className=" ">
+                <p className=" text-center font-bold text-4xl pb-10">Manage Orders</p>
             </div>
             <DataGrid
                 rows={rows}
                 columns={columns}
                 initialState={{
                     pagination: {
-                        paginationModel: { page: 0, pageSize: 5 },
+                        paginationModel: { page: 0, pageSize: 9 },
 
                     },
                 }}

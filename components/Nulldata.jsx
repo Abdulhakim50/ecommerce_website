@@ -2,7 +2,7 @@ import React from 'react'
 
 const Nulldata = ({title}) => {
   return (
-    <div>{title}</div>
+    <div className=' '>{title}</div>
   )
 }
 

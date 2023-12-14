@@ -10,9 +10,9 @@ import firebaseApp from "@/libs/firebase"
 import { getStorage } from "firebase/storage"
 import formatPrice from "@/utils/formatPrice"
 import { useCallback } from "react"
-import { MdDelete } from "react-icons/md/MdDelete"
- import { MdLegendToggle } from "react-icons/md/MdLegendToggle"
-import { MdViewColumn } from "react-icons/md/MdViewColumn"
+import { MdDelete } from "react-icons/md"
+ import { MdLegendToggle } from "react-icons/md"
+import { MdViewColumn } from "react-icons/md"
 import { deleteObject } from "firebase/storage"
 
 
@@ -117,12 +117,15 @@ renderCell:(params)=>{
     
     return(
     <div>
+          <div className=" ">
+                <p className=" text-center font-bold text-4xl pb-10">Manage Products</p>
+            </div>
        <DataGrid
        rows={rows}
        columns={columns}
        initialState={{
         pagination:{
-            paginationModel:{page:0,pageSize:5},
+            paginationModel:{page:0,pageSize:10},
 
         },
     }}

@@ -11,10 +11,9 @@ const Newarrival = ({dynamicProducts}) => {
 
     
   return (
-    <div className=" w-full justify-center">
-
-    <p className="font-extrabold">Newarrival</p>
-    <div className="mt-20 grid grid-cols-6 gap-4 w-[1700px] ">
+<div className='mt-20 text-center font-bold text-lg'>
+     <p>New Arrivals</p>
+     <div className=' grid lg:grid-cols-6 mt- md:grid-cols-3 sm:grid-cols-2 mx-10 gap-4'  >
       
     {dynamicProducts.map((item)=>{ 
 

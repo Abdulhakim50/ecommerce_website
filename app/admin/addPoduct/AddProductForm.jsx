@@ -175,8 +175,12 @@ const AddProductForm = () => {
 
 
     return (
-        <div>
-            <p>add product</p>
+        <div className='m-auto'>
+            <div>
+            <p className='text-center'> add product</p>
+            </div>
+            <div className='grid grid-cols-2 gap-5'>
+           
             <Input
                 id="name"
                 label="Name"
@@ -216,7 +220,7 @@ const AddProductForm = () => {
                 register={register}
 
             />
-
+            </div>
             <div className="w-full font-medium">
                 <div className="mb-2 fomt-semibold">Select a Catagory</div>
                 <div className="grid grid-cols-2 md:grid-cols-3 max-h[50vh] overflow-y-auto"></div>

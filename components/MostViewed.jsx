@@ -1,26 +1,31 @@
 import React from 'react'
+import MostViewedCard from './MostViewedCard';
+import Image from 'next/image';
 
-const MostViewed = () => {
-  return (
-    <div className="mt-28">
+
+const Newarrival = ({dynamicProducts}) => {
+
+    if(dynamicProducts.length === 0){
+        return <Nulldata  title={'Oops! No product found.Click "All" to clear filters'}/>
+    }
+
     
-    <p className=" font-extrabold"> MostViewed</p> 
-        <div>
-        <div className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
-    <img src="/shoes.jpg" alt="Shoes" className="rounded-xl" />
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title"></h2>
-    <p></p>
-    <div className="card-actions">
-      <button className="btn btn-primary">Buy Now</button>
+  return (
+<div className='mt-20 text-center font-bold text-lg'>
+     <p>Most Viewed</p>
+     <div className=' grid lg:grid-cols-6 mt- md:grid-cols-3 sm:grid-cols-2 mx-10 gap-4'  >
+      
+    {dynamicProducts.map((item)=>{ 
+
+        return <MostViewedCard data={item} /> 
+
+   
+
+      
+})}
     </div>
-  </div>
-</div>
-        </div>
-     </div>
+    </div>
   )
 }
 
-export default MostViewed
+export default Newarrival

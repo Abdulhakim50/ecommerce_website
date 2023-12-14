@@ -10,8 +10,14 @@ const ShowCartQty = () => {
     const {cartTotalQty}=useCart();
   return (
     <>
-    <span className="text-white bg-green-600 rounded-full text-xs w-3 h-3 cart text-center ">{cartTotalQty}</span>
-    <AiOutlineShoppingCart className="w-10 h-6" onClick={()=>router.push("/cart")}/>
+    <div className='relative cursor-pointer'>
+      <div>
+      <AiOutlineShoppingCart className=" text-4xl text-green-700 max-sm:text-2xl" onClick={()=>router.push("/cart")}/>
+      </div>
+      <span className=" absolute top-[-3px] right-[-3px] text-white bg-green-950 h-4 w-4 rounded-full  flex item-center justify-center text-xs">{cartTotalQty}</span>
+
+    </div>
+
     </>
   )
 }

@@ -7,8 +7,8 @@
 }
 .cart{
   position: absolute;
-  top: 21px;
-  left: 1395px;
+  top: 0px;
+  left: 0px;
   
 }
 .arrow{
@@ -19,3 +19,14 @@ left: 360px;
 .limg{
   background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')
 }
+.nav{
+  border-radius: 0 0 50px 50px;
+}
+.hro{
+  background-image: url('/Ecommerce.png');
+  background-position: center;
+  background-size:cover ;
+  background-position-x: right;
+ 
+}
+

@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 const Electronics = () => {
   return (
-    <div className=" mt-28 flex gap-7">
+    <div className=" mt-28 flex gap-7 max-sm:grid max-sm:grid-cols-1">
       
-        <div  className="flex-col " >
+        <div  className="flex-col  " >
         <p className="font-extrabold mb-10 text-center">Electronics</p> 
             <div className="flex">
         <Image 

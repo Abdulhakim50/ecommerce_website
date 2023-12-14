@@ -2,7 +2,7 @@
 
 import { useCart } from '@/hooks/useCart'
 import React from 'react'
-import { MdArrowBack } from 'react-icons/md/MdArrowBack'
+import { MdArrowBack } from 'react-icons/Md'
 import Heading from '../productDetails/[productId]/Heading'
 import Link from 'next/link'
 import Button from '@/components/Btn'

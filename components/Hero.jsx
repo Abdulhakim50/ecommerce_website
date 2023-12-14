@@ -4,14 +4,14 @@ import Image from 'next/image'
 const Hero = () => {
   return (
     <>
-    <div className="flex  ">
+    <div className="flex max-sm:flex-col  ">
         <div className>
     <div className=' mt-20'>
     <Image 
     src="/hero.jpg"
     width={800}
     height={100}
-    className=''
+    className='max-sm:w-[300px]'
     alt='image'
     />
     <div className="flex gap-3 mt-3 justify-center">

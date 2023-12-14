@@ -5,7 +5,13 @@ import React from 'react'
 const AdminNavitem = ({label,icon,selected}) => {
     const pathname= usePathname();
   return (
-    <div className='text-center w-full h-20 bg-blue-700'>{label} </div>
+    <>
+    <div className='flex  items-center gap-3'>
+    <div className=' text-3xl text-white'>{icon}</div>
+    <div className=' text-xl text-white font-bold'>{label} </div>
+  
+    </div>
+  </>
   )
 }
 

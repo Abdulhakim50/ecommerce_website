@@ -7,7 +7,7 @@ import formatPrice from '@/utils/formatPrice';
 import { useRouter } from 'next/navigation';
 import truncateDesc from '@/utils/trunctedDesc';
 
-const NewarrivalCard = ({data}) => {
+const MostViewedCard = ({data}) => {
 
     const router=useRouter()
     const productRating=data.reviews.reduce((acc,item)=>
@@ -38,4 +38,4 @@ const NewarrivalCard = ({data}) => {
   )
 }
 
-export default NewarrivalCard
+export default MostViewedCard

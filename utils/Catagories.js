@@ -3,30 +3,30 @@ import { MdStore } from "react-icons/Md";
 export const catagories=[
     {
         label:'All',
-        icon:MdStore
+        icon:<MdStore/>
     },
     {
         label:'Laptop',
-        icon:MdStore
+        icon:<MdStore/>
     },
     {
         label:'shoes',
-        icon:MdStore
+        icon:<MdStore/>
     },
     {
         label:'bag',
-        icon:MdStore
+        icon:<MdStore/>
     },
     {
         label:'mobile phones',
-        icon:MdStore
+        icon:<MdStore/>
     },
     {
         label:'cloths',
-        icon:MdStore
+        icon:<MdStore/>
     },
     {
         label:'cosmo',
-        icon:MdStore
+        icon:<MdStore/>
     }
 ]

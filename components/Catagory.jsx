@@ -5,6 +5,8 @@ import { IoMdArrowDropright, IoMdHeartEmpty} from 'react-icons/Io'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useCallback } from 'react'
 import queryString from 'query-string'
+import ItemContent from '@/app/cart/itemContent'
+
 
 
 const Catagory = ({ item,label }) => {
@@ -39,13 +41,15 @@ const handleClick =useCallback(()=>{
 
   return (
     <>
-         <div class="dropdown dropdown-hover dropdown-right  border w-96 h-11 p-2 cursor-pointer" onClick={handleClick}>
-
-      <div tabindex="0" className='flex-col'><span><IoMdArrowDropright className='arrow'/></span>{item.label}</div>
-      <ul class="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-52">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
-      </ul>
+         <div class="dropdown dropdown-hover dropdown-right  w-96 h-11 p-2 cursor-pointer" onClick={()=>router.push(`categoryPage/${item.label.toLowerCase()}`)} >
+      <div className='flex items-center content-center '>
+       <div className=' text-5xl text-green-500'>{item.icon}</div>
+      <div tabindex="0" className='flex-col'>
+        <span><IoMdArrowDropright className='arrow'/></span>{item.label}
+        </div>
+      </div>
+    
+    
     
       </div>
     </>

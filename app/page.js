@@ -6,6 +6,8 @@ import Electronics from '@/components/Electronics'
 import MostViewed from '@/components/MostViewed'
 import getProduct from '@/actions/getPoduct'
 import Nulldata from '@/components/Nulldata'
+import { SessionProvider } from 'next-auth/react'
+
 
 export default async function Home({searchParams}) {
   const products =await getProduct(searchParams)
@@ -22,16 +24,16 @@ export default async function Home({searchParams}) {
    }
    const dynamicProducts=shuffleArry(products)
   return (
-    <main className=" ml-24">
+    <main className=" ">
       
-    <div className='flex'>
-     <Catagories/>
-     <Hero/>
-     </div>
   
+   <Catagories/>
     <Newarrival dynamicProducts={dynamicProducts}/>
-    <Electronics/>
-     <MostViewed/>
+     <MostViewed dynamicProducts={dynamicProducts}/>
+
+  
+    
+  
    
     </main>
   )
