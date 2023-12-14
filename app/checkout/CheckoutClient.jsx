@@ -14,7 +14,7 @@ import CheckoutForm from './CheckoutForm';
 
 
 
-export const dynamic = 'auto'
+
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 

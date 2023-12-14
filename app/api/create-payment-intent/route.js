@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import prisma from '@/libs/prisma'
 
-export const dynamic = 'auto'
 
+export const dynamic = 'force-dynamic'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
    apiVersion:'2023-10-16',
@@ -25,7 +25,7 @@ export async function POST(request) {
    
 
     if (!currentUser) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+        return NextResponse.error();
     }
     const body = await request.json()
     const {items, payment_intent_id} = body
@@ -67,10 +67,7 @@ export async function POST(request) {
 
             ])
             if (!existing_order) {
-                return NextResponse.json(
-                    { error: "invalid payment intent" },
-                    { status: 400 }
-                )
+                return NextResponse.error()
             }
 
             return NextResponse.json({ paymentIntent: updated_intent });
@@ -91,5 +88,5 @@ export async function POST(request) {
 
         return NextResponse.json({ paymentIntent });
     }
-  
+    return NextResponse.error()
 }
