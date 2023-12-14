@@ -2,7 +2,7 @@
 
 import Status from '@/components/Status'
 import React from 'react'
-import { MdDone } from 'react-icons/md/MdDone '
+import { MdDone } from 'react-icons/md '
 import { MdAccessTimeFilled  } from 'react-icons/md/MdAccessTimeFilled'
 import OrderItem from './OrderItem'
 import moment from 'moment'

@@ -2,11 +2,11 @@
 import { ClassNames } from '@emotion/react';
 import  { useState,useEffect } from 'react';
 import Image from 'next/image';
-import { MdOutlineManageAccounts } from 'react-icons/Md'
-import { AiOutlineShoppingCart} from 'react-icons/Ai'
-import { FiMenu } from 'react-icons/Fi';
-import { FiHeart } from 'react-icons/Fi';
-import { FiSearch } from 'react-icons/Fi';
+import { MdOutlineManageAccounts } from 'react-icons/md'
+import { AiOutlineShoppingCart} from 'react-icons/ai'
+import { FiMenu } from 'react-icons/fi';
+import { FiHeart } from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
 import { useDebouncedCallback } from 'use-debounce';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
