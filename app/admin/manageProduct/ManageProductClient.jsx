@@ -10,9 +10,6 @@ import firebaseApp from "@/libs/firebase"
 import { getStorage } from "firebase/storage"
 import formatPrice from "@/utils/formatPrice"
 import { useCallback } from "react"
-import { MdDelete } from "react-icons/md"
- import { MdLegendToggle } from "react-icons/md"
-import { MdViewColumn } from "react-icons/md"
 import { deleteObject } from "firebase/storage"
 
 
@@ -60,9 +57,9 @@ const ManageProductClient =({products})=>{
 renderCell:(params)=>{
     return(
  <div className="gap-3">
-    <button type="button" onClick={handleToggleStock}><MdLegendToggle/></button>
-    <button type="button"  onClick={()=>{handleDelete(params.row.id,params.row.images)}}><MdDelete/></button>
-    <button type="button"  onClick={()=>router.push(`product/${params.row.id}`)}  ><MdViewColumn/> </button>
+    <button type="button" onClick={handleToggleStock}>legend</button>
+    <button type="button"  onClick={()=>{handleDelete(params.row.id,params.row.images)}}>delete</button>
+    <button type="button"  onClick={()=>router.push(`product/${params.row.id}`)}  >view </button>
  </div> 
         )
   },  

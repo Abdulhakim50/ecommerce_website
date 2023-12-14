@@ -7,7 +7,7 @@ import toast from "react-hot-toast"
 import axios from "axios"
 import moment from "moment"
 import formatPrice from '@/utils/formatPrice'
-import { MdRemoveRedEye } from 'react-icons/Md'
+
 
 
 
@@ -80,7 +80,7 @@ const ClientOrders = ({ orders }) => {
                 return (
                     <div>
 
-                        <button type="button" onClick={() => router.push(`order/${params.row.id}`)}  ><MdRemoveRedEye /></button>
+                        <button type="button" onClick={() => router.push(`order/${params.row.id}`)}  >remove</button>
                     </div>
                 )
             }

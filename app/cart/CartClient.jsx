@@ -2,7 +2,6 @@
 
 import { useCart } from '@/hooks/useCart'
 import React from 'react'
-import { MdArrowBack } from 'react-icons/Md'
 import Heading from '../productDetails/[productId]/Heading'
 import Link from 'next/link'
 import Button from '@/components/Btn'
@@ -22,7 +21,7 @@ const CartClient = ({currentUser}) => {
                 </div>
                 <div>
                     <Link href={"/"} className=' text-slate-500 flex items-center gap-1 mt-2'>
-                        <MdArrowBack />
+                         back
                         <span>
                             Start Shopping
                         </span>

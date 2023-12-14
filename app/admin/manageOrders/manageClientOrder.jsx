@@ -11,8 +11,7 @@ import { useRouter } from "next/navigation"
 import firebaseApp from "@/libs/firebase"
 import formatPrice from "@/utils/formatPrice"
 import { useCallback } from "react"
-import { MdDeliveryDining, MdRemoveRedEye } from "react-icons/md"
-import { MdDone } from "react-icons/md"
+
 
 
 const ManageClientOrders = ({ orders }) => {
@@ -81,9 +80,9 @@ const ManageClientOrders = ({ orders }) => {
             renderCell: (params) => {
                 return (
                     <div className="gap-6">
-                        <button type="button" onClick={()=>{handleDispatch(params.row.id)}}><MdDeliveryDining/></button>
-                        <button type="button" onClick={()=>{handleDeliver(params.row.id)}}><MdDone/></button>
-                        <button type="button" onClick={() => router.push(`/order/${params.row.id}`)}  ><MdRemoveRedEye/></button>
+                        <button type="button" onClick={()=>{handleDispatch(params.row.id)}}>delivery</button>
+                        <button type="button" onClick={()=>{handleDeliver(params.row.id)}}>done</button>
+                        <button type="button" onClick={() => router.push(`/order/${params.row.id}`)}  >eye</button>
                     </div>
                 )
             }
