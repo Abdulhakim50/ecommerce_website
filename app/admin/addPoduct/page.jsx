@@ -1,7 +1,7 @@
 import { getCurrentUser } from '@/actions/getCurrentUser';
 import React from 'react'
 import Nulldata from '@/components/Nulldata';
-import AddProductForm from './addProductForm';
+import AddProductForm from './AddProductForm';
 
 const page = async() => {
 

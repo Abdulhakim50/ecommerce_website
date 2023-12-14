@@ -1,7 +1,7 @@
 import { getCurrentUser } from '@/actions/getCurrentUser';
 import { NextResponse } from 'next/server';
 import React from 'react'
-import { IoLogoYahoo } from 'react-icons/Io';
+
 
 export async function POST(request) {
  const currentUser= await getCurrentUser();
