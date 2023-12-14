@@ -11,7 +11,7 @@ import Btn from '@/components/Btn'
 import ProductImg from '@/components/ProductImg'
 import { useCart } from '@/hooks/useCart'
 //import { useCartElementState } from '@stripe/react-stripe-js'
-import { MdCheckCircle } from 'react-icons/Md'
+
 import { useRouter } from 'next/navigation'
 
 const productDetails = ({ product }) => {
@@ -105,7 +105,7 @@ const productDetails = ({ product }) => {
                 <div>
                     {isProductInCart ? (<>
                         <p className="mb-2 text-slate-500 flex item-center gap-1">
-                            <MdCheckCircle className="text-teal-400" size={20} />
+                            checkCircle
 
                         </p>
                         <div className="max-x-[300px]">

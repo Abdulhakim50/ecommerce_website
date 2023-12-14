@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiPauseCircle } from 'react-icons/Fi' 
+
 import Image from 'next/image'
 
 const Avater = ({src} )=> {
@@ -13,7 +13,7 @@ if (src){
     />
 }
   return (
-    <FiPauseCircle size={24}/>
+    FiPauseCircle
   )
 }
 
