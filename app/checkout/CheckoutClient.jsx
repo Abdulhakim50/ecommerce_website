@@ -8,6 +8,9 @@ import { useCart } from '@/hooks/useCart';
 import { useState, useEffect, useCallback } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm';
+export const dynamic = "force-dynamic";
+
+
 
 
 
