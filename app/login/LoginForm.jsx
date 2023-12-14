@@ -94,7 +94,7 @@ const LoginForm = ({currentUser}) => {
                             Sign in with Google
                         </button>
                         <div className="text-center">
-                            <span className="text-xs text-gray-400 font-semibold">Don't have account?</span>
+                            <span className="text-xs text-gray-400 font-semibold">Dont have account?</span>
                             <a href="#" className="text-xs font-semibold text-purple-700">Sign up</a>
                         </div>
                     </div>

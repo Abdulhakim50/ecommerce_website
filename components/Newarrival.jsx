@@ -18,7 +18,7 @@ const Newarrival = ({dynamicProducts}) => {
       
     {dynamicProducts.map((item)=>{ 
 
-        return <NewarrivalCard data={item} /> 
+        return <NewarrivalCard data={item} key={item.id} /> 
 
    
 
