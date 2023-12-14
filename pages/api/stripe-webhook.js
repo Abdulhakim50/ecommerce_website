@@ -4,7 +4,7 @@ import { buffer } from "micro"
 import Stripe from "stripe"
 import { PrismaClient } from "@prisma/client";
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'auto'
 
 
 
