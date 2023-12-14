@@ -27,12 +27,9 @@ const  CheckoutClient =  () => {
 
     const router = useRouter();
   
-    console.log(paymentIntent)
-    console.log(clientSecret)
+   
 
-    const handefetch=()=>{
-        
-    }
+
 
     useEffect(() => {
         
