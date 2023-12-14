@@ -2,11 +2,6 @@
 import { ClassNames } from '@emotion/react';
 import  { useState,useEffect } from 'react';
 import Image from 'next/image';
-import { MdOutlineManageAccounts } from 'react-icons/md'
-import { AiOutlineShoppingCart} from 'react-icons/ai'
-import { FiMenu } from 'react-icons/fi';
-import { FiHeart } from 'react-icons/fi';
-import { FiSearch } from 'react-icons/fi';
 import { useDebouncedCallback } from 'use-debounce';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
@@ -41,7 +36,6 @@ const SearchWithCategory = (catagory,query) => {
 
     <div className='flex items-center justify-evenly pt-10' >
         <div className='md:hidden text-3xl ' onClick={handles}>
-         <FiMenu className=''/>  
         </div>
      
       <div className=''>
@@ -68,8 +62,6 @@ const SearchWithCategory = (catagory,query) => {
          
          <input type="text" onChange={(e) => {handleSearch(e.target.value);
         }}   defaultValue={searchParams.get('query')?.toString()} placeholder='what are you looking for?'  className={` text-black border-l-0  ml-1 px-20  ${open? 'max-lg:absolute max-lg:top-[60px] max-lg:left-[-220px] max-lg:w-[500px] max-sm:w-[400px] max-sm:w-[400px] max-sm:left-[-150px] max-lg:border max-lg:border-green-500 max-lg:px-[10px] max-lg:py-[10px] max-lg:rounded-full transform translate-y-4 translate-y-0 transition duration-500 ease-in-out ':'max-lg:hidden'} `} />
-         <FiSearch className={`lg:hidden ${open? 'max-lg:absolute max-lg:top-[70px] max-lg:left-[250px] max-sm:left-[220px] text-2xl': 'max-lg:hidden'}`}    />
-          <FiSearch className=' bg-green-600 w-[100px] h-[60px]  text-white max-lg:bg-white max-lg:text-green-500 max-lg:text-xl' />
          </div>
          <div className='search-results'>
         {/* Display search results here */}
@@ -79,16 +71,16 @@ const SearchWithCategory = (catagory,query) => {
       </div>
       <div className='flex gap-7 '> 
       <div className='flex flex-col text-center items-center '>
-        <FiHeart className=' font-normal text-4xl'/>
+    
         <div className=' text-sm'>Wishlist</div>
         </div>
       <div className='flex flex-col text-center items-center '>
-        <AiOutlineShoppingCart className=' text-4xl'/>
+      
         <p className=' text-sm'>Cart</p>
         </div>
         
         <div className='flex flex-col text-center items-center '>
-        <MdOutlineManageAccounts className=' text-4xl'/>
+  
         <div className=' text-sm'>Account</div>
         </div>
         
@@ -111,7 +103,7 @@ const SearchWithCategory = (catagory,query) => {
 
       <div className='  bg-white h-[600px] w-[300px]  flex flex-col  relative top-[-60px] max-[1019px]:hidden'>
       <div className=' p-3 flex gap-3 items-center  '>
-        <div className='text-2xl text-green-500'><FiMenu/></div>
+        <div className='text-2xl text-green-500'></div>
         <p className=' text-2xl font-extrabold text-green-500'>CATEGORIES</p>
       
       </div> 

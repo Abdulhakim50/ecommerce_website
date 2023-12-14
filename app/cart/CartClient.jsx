@@ -70,7 +70,7 @@ const CartClient = ({currentUser}) => {
         <button class="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700" onClick={() => { currentUser ? router.push("/checkout") : router.push("/ogin") }}>{currentUser ? "Checkout" : "Login to checkout"}</button>
       </div>
       <Link href={"/"} className=' text-slate-500 flex items-center gap-1 mt-2'>
-                    <MdArrowBack />
+                   back
                     <span>continue shopping</span>
         </Link>
     </div>

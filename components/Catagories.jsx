@@ -1,11 +1,11 @@
 
 'use client'
 import React from 'react'
-import { IoMdArrowDropright, IoMdHeartEmpty} from 'react-icons/Io'
+
 import Catagory from './Catagory'
 import { catagories } from '@/utils/Catagories'
 import { usePathname, useSearchParams } from 'next/navigation'
-import { FiMenu } from 'react-icons/Fi'
+
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 const Catagories = () => {
@@ -41,7 +41,7 @@ const Catagories = () => {
 
       <div className='  bg-white h-[600px] w-[300px]  flex flex-col  relative top-[-60px] max-[1019px]:hidden'>
       <div className=' p-3 flex gap-3 items-center  '>
-        <div className='text-2xl text-green-500'><FiMenu/></div>
+        <div className='text-2xl text-green-500'>menu</div>
         <p className=' text-2xl font-extrabold text-green-500'>CATEGORIES</p>
       
       </div> 

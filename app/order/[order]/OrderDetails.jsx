@@ -17,16 +17,16 @@ const OrderDetails = ({order}) => {
     <div>Total Amount:{""}</div>
     <div>Payment Status</div>
     <div>
-        {order.status==='pending'?<Status text="pending"  icon={<MdAccessTimeFilled/>}/>
-        : order.status==='complate'?<Status text="compated" icon={<MdDone/>}/>
+        {order.status==='pending'?<Status text="pending"  icon='time'/>
+        : order.status==='complate'?<Status text="compated" icon='done'/>
         :<></>
         }
     </div>
     <div>Delivery Status</div>
     <div>
-        {order.deliveryStatus==='pending'?<Status text="pending" className=" bg-blue-400" icon={<MdAccessTimeFilled/>}/>
-        : order.deliveryStatus==='dispatched'?<Status text="diapatched" className="bg-blue-700" icon={<MdDone/>}/>
-        : order.deliveryStatus==='delivered'?<Status text="delivered" className="bg-green-400" icon={<MdDone/>}/>
+        {order.deliveryStatus==='pending'?<Status text="pending" className=" bg-blue-400" icon='filed'/>
+        : order.deliveryStatus==='dispatched'?<Status text="diapatched" className="bg-blue-700" icon='done'/>
+        : order.deliveryStatus==='delivered'?<Status text="delivered" className="bg-green-400" icon='done'/>
 
         :<></>
         }
