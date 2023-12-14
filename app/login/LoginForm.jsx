@@ -90,8 +90,6 @@ const LoginForm = ({currentUser}) => {
                                 width={300}
                                 height={600}
                                 alt="login image"
-
-
                             />
                             Sign in with Google
                         </button>

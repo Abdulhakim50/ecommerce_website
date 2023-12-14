@@ -53,7 +53,7 @@ const Catagories = () => {
          label={item.label}
          icon={item.icon}
          selected={catagory===item.label ||  (catagory===null && item.label==='All')}
-         
+         key={item.label}
          />
 })}
 </div>

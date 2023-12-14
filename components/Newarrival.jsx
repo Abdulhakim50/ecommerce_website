@@ -1,6 +1,7 @@
 import React from 'react'
 import NewarrivalCard from './NewarrivalCard';
 import Image from 'next/image';
+import Nulldata from './Nulldata';
 
 
 const Newarrival = ({dynamicProducts}) => {

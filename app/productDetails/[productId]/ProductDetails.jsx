@@ -14,7 +14,7 @@ import { useCart } from '@/hooks/useCart'
 
 import { useRouter } from 'next/navigation'
 
-const productDetails = ({ product }) => {
+const ProductDetails = ({ product }) => {
     const { handleAddToCart, cartProducts } = useCart()
     const [isProductInCart, setisProductInCart] = useState(false)
     const [cartProduct, setcartProduct] = useState(
@@ -137,4 +137,4 @@ const productDetails = ({ product }) => {
     )
 }
 
-export default productDetails
+export default ProductDetails
