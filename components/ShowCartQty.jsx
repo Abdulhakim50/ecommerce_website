@@ -17,7 +17,7 @@ const ShowCartQty = () => {
 </svg>
 
       </div>
-      <span className=" absolute top-[-3px] right-[-3px] text-white bg-green-950 h-4 w-4 rounded-full  flex item-center justify-center text-xs">{cartTotalQty}</span>
+      <span className=" absolute top-[-2px] right-[-0px] text-white bg-green-950 h-4 w-4 rounded-full  flex item-center justify-center text-xs">{cartTotalQty}</span>
 
     </div>
 

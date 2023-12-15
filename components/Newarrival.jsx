@@ -14,7 +14,7 @@ const Newarrival = ({dynamicProducts}) => {
   return (
 <div className='mt-20 text-center font-bold text-lg'>
      <p>New Arrivals</p>
-     <div className=' grid lg:grid-cols-6 mt- md:grid-cols-3 sm:grid-cols-2 mx-10 gap-4'  >
+     <div className=' grid max-sm:grid-cols-2  lg:grid-cols-6 md:grid-cols-3 mx-10 max-sm:mx-2 max-sm:gap-2 gap-4'  >
       
     {dynamicProducts.map((item)=>{ 
 
