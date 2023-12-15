@@ -7,6 +7,7 @@ import CartProvider from '@/providers/CartProvider'
 import { SessionProvider } from 'next-auth/react'
 import NavHome from '@/components/NavHome'
 import Catagories from '@/components/Catagories'
+import FooterNav from '@/components/FooterNav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,7 +45,7 @@ export default async function RootLayout({ Component, children, session, pagePro
 
             </main>
 
-        
+          <FooterNav/>
           </div>
 
         </CartProvider>

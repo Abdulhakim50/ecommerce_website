@@ -45,7 +45,8 @@ const handleClick =useCallback(()=>{
       <div className='flex items-center content-center '>
        <div className=' text-5xl text-green-500'>{item.icon}</div>
       <div tabindex="0" className='flex-col'>
-        <span>IoMdArrowDropright</span>{item.label}
+        <span></span>{item.label}
+
         </div>
       </div>
     
