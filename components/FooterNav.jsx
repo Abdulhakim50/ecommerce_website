@@ -2,7 +2,7 @@
 import React from 'react'
 import ShowCartQty from './ShowCartQty'
 import Link from 'next/link'
-
+import Button from './Button'
 
 
 const FooterNav = ({currentUser}) => {
