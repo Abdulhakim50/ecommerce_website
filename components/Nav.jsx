@@ -60,8 +60,8 @@ const Nav = ({currentUser}) => {
  
         </div>
      
-      <div className='text-green-500 font-bold text-3xl'>
-        <p>Ethiomarket.com</p>
+      <div className='text-green-500 font-bold max-sm:text-xl'>
+        <p className='text-3xl max-sm:text-xl'>ethiomarket<spn className='text-black font-medium opacity-40'>.com</spn></p>
       </div> 
      
       <div className='flex border border-green-500  max-lg:border-none'>
@@ -91,7 +91,7 @@ const Nav = ({currentUser}) => {
 </svg>
 
        
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' bg-green-600 w-[100px] h-[60px]  text-white max-lg:bg-white max-lg:text-green-500 max-lg:text-xl' onClick={handleSearch}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' bg-green-600 w-[100px] h-[60px] max-sm:w-[20px] h-[20px]  text-white max-lg:bg-white max-lg:text-green-500 max-lg:text-xl' onClick={handleSearch}>
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>
 
@@ -112,7 +112,7 @@ const Nav = ({currentUser}) => {
         <div className=' text-sm'>Wishlist</div>
         </div>
       <div className='flex flex-col text-center items-center '>
-        <ShowCartQty />
+        <ShowCartQty className="w-12 h-12 text-green-500" Qty=" absolute top-[-2px] right-[-0px] text-white bg-green-950 h-4 w-4 rounded-full  flex item-center justify-center text-xs"/>
         <p className=' text-sm'>Cart</p>
         </div>
         

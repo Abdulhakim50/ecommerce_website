@@ -29,4 +29,10 @@ left: 360px;
   background-position-x: right;
  
 }
+.rad{
+  border-radius:10px 0  10px 0;
+}
+.radd{
+  border-radius:20px 20px 0 0;
+}
 

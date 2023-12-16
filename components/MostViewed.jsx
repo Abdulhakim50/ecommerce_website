@@ -1,5 +1,5 @@
 import React from 'react'
-import MostViewedCard from './MostViewedCard';
+import NewarrivalCard from './NewarrivalCard';
 import Image from 'next/image';
 import Nulldata from './Nulldata';
 
@@ -13,12 +13,12 @@ const Newarrival = ({dynamicProducts}) => {
     
   return (
 <div className='mt-20 text-center font-bold text-lg'>
-     <p>Most Viewed</p>
-     <div className=' grid lg:grid-cols-6 mt- md:grid-cols-3 sm:grid-cols-2 mx-10 gap-4'  >
+     <p className='max-sm:bg-green-500 max-sm:mb-3 rad max-sm:mx-2'>Most Viewed</p>
+     <div className=' grid max-sm:grid-cols-2  lg:grid-cols-6 md:grid-cols-3 mx-10 max-sm:mx-2 max-sm:gap-2 gap-4'  >
       
     {dynamicProducts.map((item)=>{ 
 
-        return <MostViewedCard data={item} key={item.id} /> 
+        return <NewarrivalCard data={item} key={item.id} /> 
 
    
 

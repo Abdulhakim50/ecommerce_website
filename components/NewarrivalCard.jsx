@@ -23,8 +23,8 @@ const NewarrivalCard = ({data}) => {
 
       <div className="p-4 max-sm:h-5">
         <p className='max-sm:hidden'>nick</p>
-        <h3 className=" text-sm font-semibold mb-2">{truncate(data.name)}</h3>
-        <p className="text-gray-600 text-base">{formatPrice (data.price)}</p>
+        <h3 className=" max-sm:text-xs font-semibold mb-2">{truncate(data.name)}</h3>
+        <p className="text-gray-600 max-sm:text-sm">{formatPrice (data.price)}</p>
       </div>
 
       <div className="p-4 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity">

@@ -7,7 +7,7 @@ import formatPrice from '@/utils/formatPrice';
 import { useRouter } from 'next/navigation';
 import truncateDesc from '@/utils/trunctedDesc';
 
-const MostViewedCard = ({data}) => {
+const NewarrivalCard = ({data}) => {
 
     const router=useRouter()
     const productRating=data.reviews.reduce((acc,item)=>
@@ -18,13 +18,13 @@ const MostViewedCard = ({data}) => {
   return (
     <>
 
-     <div className="group bg-white rounded-lg shadow-md overflow-hidden " onClick={()=>router.push(`/productDetails/${data.id}`)} >
-      <Image src={data.images[0].image} alt="Shoes" width={200} height={40}  className="w-full h-40 object-cover" />
+     <div className="group bg-white rounded-lg shadow-md overflow-hidden    " onClick={()=>router.push(`/productDetails/${data.id}`)} >
+      <Image src={data.images[0].image} alt="Shoes" width={200} height={40}  className="w-full h-40 max-sm:h-32 object-cover" />
 
-      <div className="p-4">
-        <p>nick</p>
-        <h3 className="text-lg font-semibold mb-2">{truncate(data.name)}</h3>
-        <p className="text-gray-600">{formatPrice (data.price)}</p>
+      <div className="p-4 max-sm:h-5">
+        <p className='max-sm:hidden'>nick</p>
+        <h3 className=" max-sm:text-xs font-semibold mb-2">{truncate(data.name)}</h3>
+        <p className="text-gray-600 max-sm:text-sm">{formatPrice (data.price)}</p>
       </div>
 
       <div className="p-4 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -38,4 +38,4 @@ const MostViewedCard = ({data}) => {
   )
 }
 
-export default MostViewedCard
+export default NewarrivalCard
