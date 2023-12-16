@@ -13,6 +13,7 @@ import { useDebouncedCallback } from 'use-debounce'
 import { useCart } from '@/hooks/useCart'
 
 
+
 const Nav = ({currentUser}) => {
     const {openn,setOpenn}=useCart()
   const [open, setopen] = useState(false)
@@ -66,12 +67,25 @@ const Nav = ({currentUser}) => {
   </div> 
   <div className="drawer-side">
     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay "></label>
-    <ul className="menu p-4 w-64 min-h-full  bg-black opacity-72  text-base-content ">
+    <div className="menu p-4 w-64 min-h-full  bg-[#333333] opacity-72  text-base-content ">
       {/* Sidebar content here */}
-      <li><a>Sidebar Item 1</a></li>
-      <li><a>Sidebar Item 2</a></li>
-      
-    </ul>
+      <div className='mt-10'>
+      <div className='flex'>
+     <input type="text" className='border border-white bg-[#333333] text-white px-5 py-1' placeholder='what are you looking for?' />
+     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' bg-green-600 w-[30px] h-[30px]    text-white  max-lg:text-green-500 max-lg:text-xl' onClick={handleSearch}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+</svg>
+     </div>
+     <div>
+      <p className='text-white text-center mt-5  text-lg'>CATEGORIES</p>
+      <div className='divide-y '>
+      {catagories.map((category)=>(
+              <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500 border-bottom border-white p-5'>{category.label}</option>
+          ))}
+      </div>
+     </div>
+     </div>
+    </div>
   </div>
 </div>
        
