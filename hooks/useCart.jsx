@@ -10,6 +10,7 @@ export const CartContextProvider=(props)=>{
      const [cartProducts, setcartProducts] = useState(null)
      const [cartTotal, setcartTotal] = useState(0)
      const [paymentIntent, setpaymentIntent] = useState(null)
+     const [openn,setOpenn]=useState(false)
 
      useEffect(() => {
        const cartItems=localStorage.getItem('CartItems')
@@ -140,6 +141,8 @@ export const CartContextProvider=(props)=>{
 
 
     const value={
+        openn,
+        setOpenn,
         cartTotalQty,
         cartTotal,
         cartProducts,

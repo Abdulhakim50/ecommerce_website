@@ -4,7 +4,9 @@ import ShowCartQty from './ShowCartQty'
 import Link from 'next/link'
 
 
+
 const FooterNav = ({currentUser}) => {
+  
   
   return (
     <div className='fixed bottom-0 w-full bg-green-500 h-[60px] flex justify-evenly md:hidden  radd '>

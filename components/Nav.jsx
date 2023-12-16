@@ -10,10 +10,11 @@ import  { useState,useEffect } from 'react';
 import { catagories } from '@/utils/Catagories'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce'
+import { useCart } from '@/hooks/useCart'
 
 
 const Nav = ({currentUser}) => {
-
+    const {openn,setOpenn}=useCart()
   const [open, setopen] = useState(false)
   const [ope, setope] = useState(false)
   const searchParams = useSearchParams();
@@ -54,10 +55,26 @@ const Nav = ({currentUser}) => {
   
       <div className='flex items-center justify-evenly pt-10' >
         <div className='md:hidden text-3xl ' onClick={handles}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <div className="drawer">
+  <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+  <div className="drawer-content">
+    {/* Page content here */}
+    <label htmlFor="my-drawer" className=""> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 </svg>
- 
+ </label>
+  </div> 
+  <div className="drawer-side">
+    <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay "></label>
+    <ul className="menu p-4 w-64 min-h-full  bg-black opacity-72  text-base-content ">
+      {/* Sidebar content here */}
+      <li><a>Sidebar Item 1</a></li>
+      <li><a>Sidebar Item 2</a></li>
+      
+    </ul>
+  </div>
+</div>
+       
         </div>
      
       <div className='text-green-500 font-bold max-sm:text-xl'>
@@ -91,7 +108,7 @@ const Nav = ({currentUser}) => {
 </svg>
 
        
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' bg-green-600 w-[100px] h-[60px] max-sm:w-[20px] h-[20px]  text-white max-lg:bg-white max-lg:text-green-500 max-lg:text-xl' onClick={handleSearch}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' md:bg-green-600 w-[100px] h-[60px] max-sm:w-[20px] h-[20px]  text-white  max-lg:text-green-500 max-lg:text-xl' onClick={handleSearch}>
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>
 
