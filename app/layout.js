@@ -23,6 +23,7 @@ const currentUser= await getCurrentUser()
 
   return (
     <html lang="en">
+    
       <body className=' bg-white'>
 
         <Toaster toastOptions={{
@@ -52,7 +53,7 @@ const currentUser= await getCurrentUser()
         </CartProvider>
 
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
       </body>
     </html>
   )

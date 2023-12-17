@@ -101,13 +101,14 @@ const LoginForm = ({currentUser}) => {
                 </div>
 
 
-                <div className="flex flex-wrap content-center justify-center rounded-r-md w-[24rem] h-[32rem]" >
+                <div className="flex flex-wrap content-center justify-center rounded-r-md w-[24rem] h-[32rem] max-sm:hidden" >
                     <Image
                         className="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md"
                         src="https://i.imgur.com/9l1A4OS.jpeg"
                         width={300}
                         height={600}
                         alt='image'
+                     
                     />
                 </div>
 
