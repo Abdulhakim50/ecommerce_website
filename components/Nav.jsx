@@ -96,7 +96,7 @@ const Nav = ({currentUser}) => {
      <Link href='register' className='text-white'>SignUp</Link>
      </div>
       <p className='text-white text-center mt-5  text-lg'>CATEGORIES</p>
-      <div className=' w-[320px]'>
+      <div className=' w-[312px]'>
       {catagories.map((category)=>(
               <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500  border-gray-500 p-5 border-y-[1px]'>{category.label}</option>
           ))}
