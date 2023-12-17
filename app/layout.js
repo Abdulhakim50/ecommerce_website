@@ -9,6 +9,7 @@ import NavHome from '@/components/NavHome'
 import Catagories from '@/components/Catagories'
 import FooterNav from '@/components/FooterNav'
 import { getCurrentUser } from '@/actions/getCurrentUser'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -53,7 +54,7 @@ const currentUser= await getCurrentUser()
         </CartProvider>
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js" async></script>
       </body>
     </html>
   )
