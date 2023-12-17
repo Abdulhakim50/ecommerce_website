@@ -22,6 +22,7 @@ export default async function RootLayout({  children }) {
 
 const currentUser= await getCurrentUser()
 
+
   return (
     <html lang="en">
     

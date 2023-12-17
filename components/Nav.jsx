@@ -23,6 +23,8 @@ const Nav = ({currentUser}) => {
   const { replace } = useRouter();
    const router =useRouter()
 
+   console.log('currentUser',currentUser)
+
   const handle=()=>{
     setopen(!open)
    }
@@ -60,7 +62,7 @@ const Nav = ({currentUser}) => {
 
 
        
-        <div class=" md:hidden mt-4">
+        <div class=" md:hidden mt-4 ">
    <button class="text-black font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -68,7 +70,7 @@ const Nav = ({currentUser}) => {
    </button>
 </div>
 
-<div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen bg-[#333333]  p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-label">
+<div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen bg-[#333333]  p-4 overflow-y-auto transition-transform -translate-x-full  w-80 flex flex-col justify-evenly items-center" tabindex="-1" aria-labelledby="drawer-label">
    <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
   </svg>ethiomarket</h5>
@@ -79,16 +81,24 @@ const Nav = ({currentUser}) => {
       <span class="sr-only">Close menu</span>
    </button>
    <div className='flex'>
-     <input type="text" className='border border-white bg-[#333333] text-white px-5 py-1' placeholder='what are you looking for?' />
-     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' bg-green-600 w-[30px] h-[30px]    text-white  max-lg:text-green-500 max-lg:text-xl' onClick={handleSearch}>
+     <input type="text" className='border border-white bg-[#333333] text-white px-5 py-1 border-[1px]' placeholder='what are you looking for?' />
+     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' bg-green-600 w-[30px] h-[38px]    text-white  max-lg:text-green-500 max-lg:text-xl' onClick={handleSearch}>
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>
      </div>
+   <div>
+    <p className='text-white'>Welcome {currentUser.name}</p>
+   </div>
      <div>
+      
+     <div className='flex flex-col ml-5 gap-2'>
+     <Link href='/login' className='text-white'>SignIn</Link>
+     <Link href='register' className='text-white'>SignUp</Link>
+     </div>
       <p className='text-white text-center mt-5  text-lg'>CATEGORIES</p>
-      <div className='divide-y '>
+      <div className=' w-[320px]'>
       {catagories.map((category)=>(
-              <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500 border-bottom border-white p-5 '>{category.label}</option>
+              <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500  border-gray-500 p-5 border-y-[1px]'>{category.label}</option>
           ))}
       </div>
      </div>
