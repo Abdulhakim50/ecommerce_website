@@ -23,7 +23,7 @@ const Nav = ({currentUser}) => {
   const { replace } = useRouter();
    const router =useRouter()
 
-   console.log('currentUser',currentUser)
+
 
   const handle=()=>{
     setopen(!open)
@@ -80,18 +80,21 @@ const Nav = ({currentUser}) => {
       </svg>
       <span class="sr-only">Close menu</span>
    </button>
-   <div className='flex'>
-     <input type="text" className='border border-white bg-[#333333] text-white px-5 py-1 border-[1px]' placeholder='what are you looking for?' />
+   <div>
+    <p className='text-white text-center'>Welcome {currentUser?.name}</p>
+   </div>
+   <div className='flex items-center justify-center'>
+     <input type="text" className='border border-white bg-[#333333] text-white px-5 py-1 border-[1px]' placeholder='what are you looking for?' onChange={(e) => {
+            handleInput(e.target.value);
+          }}    defaultValue={searchParams.get('query')?.toString()}/>
      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' bg-green-600 w-[30px] h-[38px]    text-white  max-lg:text-green-500 max-lg:text-xl' onClick={handleSearch}>
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>
      </div>
-   <div>
-    <p className='text-white'>Welcome {currentUser?.name}</p>
-   </div>
+
      <div>
       
-     <div className='flex flex-col gap-2'>
+     <div className='flex gap-10 justify-center'>
      <Link href='/login' className='text-white'>SignIn</Link>
      <Link href='register' className='text-white'>SignUp</Link>
      </div>
