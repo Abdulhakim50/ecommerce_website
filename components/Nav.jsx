@@ -87,11 +87,11 @@ const Nav = ({currentUser}) => {
 </svg>
      </div>
    <div>
-    <p className='text-white'>Welcome {currentUser.name}</p>
+    <p className='text-white'>Welcome {currentUser?.name}</p>
    </div>
      <div>
       
-     <div className='flex flex-col ml-5 gap-2'>
+     <div className='flex flex-col gap-2'>
      <Link href='/login' className='text-white'>SignIn</Link>
      <Link href='register' className='text-white'>SignUp</Link>
      </div>
