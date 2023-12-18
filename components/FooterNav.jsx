@@ -10,7 +10,7 @@ const FooterNav = ({currentUser}) => {
   const router =useRouter()
   
   return (
-    <div className='fixed bottom-0 w-full bg-green-500 h-[60px] flex justify-evenly md:hidden  radd '>
+    <div className='fixed bottom-0 mt-[60px] w-full bg-green-500 h-[60px] flex justify-evenly md:hidden  radd '>
    
 
   <Link href='/'>
