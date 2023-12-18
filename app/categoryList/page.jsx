@@ -5,7 +5,7 @@ import Image from 'next/image'
 const page = () => {
   return (
  <>
-        <div class="grid max-sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mx-10 max-sm:gap-2 items-center">
+        <div class="grid max-sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mx-5 max-sm:gap-2 items-center">
 
         {catagories.map((category)=>{
           
