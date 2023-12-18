@@ -1,54 +1,28 @@
-import React from 'react'
+'use client'
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 
-const page = () => {
+const HeroSlider = () => {
+  const images = ['camera.jpg', 'shoes.jpg', 'laptop.jpg',"hero.jpg"]; // replace with your image paths
+
   return (
-   
-
-<div class="bg-gray-100 h-screen flex items-center justify-center">
-
-<div class="bg-white p-8 rounded shadow-md max-w-lg w-full">
-
-    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Sign Up</h2>
-
-    <div class="mb-4">
-        <label for="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
-        <input type="text" id="firstName" name="firstName" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="John"/>
+    <div className="relative w-[500px] m-auto">
+      <Carousel
+        showThumbs={false}
+        showStatus={false}
+        infiniteLoop
+        autoPlay
+        interval={5000}
+      >
+        {images.map((image, index) => (
+          <div key={index} className="h-96">
+            <img src={image} alt="" className="w-[100px] h-full object-fit" />
+          </div>
+        ))}
+      </Carousel>
     </div>
+  );
+};
 
-
-    <div class="mb-4">
-        <label for="lastName" class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
-        <input type="text" id="lastName" name="lastName" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="Doe"/>
-    </div>
-
-
-    <div class="mb-6">
-        <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-        <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="********"/>
-    </div>
-    <div class="mb-6">
-        <label for="confirmPassword" class="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="********"/>
-    </div>
-   
-    <button class="bg-blue-500 text-white rounded-full px-4 py-2 w-full hover:bg-blue-600" onClick={handleSubmit(onSubmit)}>
-    {loading ? "loading" : "signun"}
-    </button>
-
-    
-    <button class="bg-red-500 text-white rounded-full px-4 py-2 w-full mt-4">
-        Sign Up with Google
-    </button>
-
-    <p class="mt-4 text-gray-600 text-sm text-center">
-        Already have an account? <a href="#" class="text-blue-500">Log in</a>
-    </p>
-
-</div>
-
-</div>
-
-  )
-}
-
-export default page
+export default HeroSlider

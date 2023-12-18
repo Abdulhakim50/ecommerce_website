@@ -175,86 +175,93 @@ const AddProductForm = () => {
 
 
     return (
-        <div className='m-auto'>
-            <div>
-            <p className='text-center'> add product</p>
-            </div>
-            <div className='grid grid-cols-2 gap-5'>
-           
-            <Input
-                id="name"
-                label="Name"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-            />
-            <Input
-                id="price"
-                label="Price"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                type="number"
-                required
-            />
-            <Input
-                id="brand"
-                label="Brand"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-            />
-            <Textarea
-                id="description"
-                label="Description"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-            />
-            <Checkbox
-                id="inStock"
-                label="This Product is in stock"
-                register={register}
-
-            />
-            </div>
-            <div className="w-full font-medium">
-                <div className="mb-2 fomt-semibold">Select a Catagory</div>
-                <div className="grid grid-cols-2 md:grid-cols-3 max-h[50vh] overflow-y-auto"></div>
-                {catagories.map((items) => {
-                    if (items.label === "All") {
-                        return null;
-                    }
-                    return (
-                        <div key={items.label} className="col-span">
-                            <CatagoryInput onClick={(catagory) => setCustomValue('catagory', catagory)}
-                                selected={catagory === items.label}
-                                label={items.label}
-                                icon={items.icon}
-
-                            />
-                        </div>
-                    )
-                })}
-            </div>
-            <>
-                <div>
-                    {colors.map((items, index) => {
-                        return <SelectColor key={index} items={items} addImageTOState={addImageTOState}
-                            removeImageFormState={removeImageFormState}
-                            isProductCreated={false}
-                        />
-                    })}
-                </div>
-                <Btn
-                    label={isLoading ? 'Loading' : 'Add Product'}
-                    onClick={handleSubmit(onSubmit)}
-                />
-            </>
+        <div className="mx-auto p-4 max-w-lg  ">
+        <div>
+          <p className="text-center text-2xl font-bold mb-4">Add Product</p>
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <Input
+      id="name"
+      label="Name"
+      disabled={isLoading}
+      register={register}
+      errors={errors}
+      required
+      className="mb-4 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+    />
+    <Input
+      id="price"
+      label="Price"
+      disabled={isLoading}
+      register={register}
+      errors={errors}
+      type="number"
+      required
+      className="mb-4 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+    />
+    <Input
+      id="brand"
+      label="Brand"
+      disabled={isLoading}
+      register={register}
+      errors={errors}
+      required
+      className="mb-4 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+    />
+    <Textarea
+      id="description"
+      label="Description"
+      disabled={isLoading}
+      register={register}
+      errors={errors}
+      required
+      className="mb-4 p-3 border border-gray-300 rounded-md w-full h-32 focus:outline-none focus:ring focus:border-blue-300 resize-none"
+    />
+    <div className="flex items-center mb-4">
+      <Checkbox
+        id="inStock"
+        label="This Product is in stock"
+        register={register}
+        className="mr-2"
+      />
+      <label htmlFor="inStock" className="text-sm text-gray-600">
+        This Product is in stock
+      </label>
+    </div>
+        </div>
+        <div className="w-full font-medium mt-4">
+          <div className="mb-2 font-semibold">Select a Category</div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-[50vh] overflow-y-auto">
+            {catagories.map((item) => (
+              <div key={item.label} className="col-span-1">
+                <CatagoryInput
+                  onClick={(category) => setCustomValue('category', category)}
+                  selected={catagory === item.label}
+                  label={item.label}
+                  icon={item.icon}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-4">
+          {colors.map((items, index) => (
+            <SelectColor
+              key={index}
+              items={items}
+              addImageTOState={addImageTOState}
+              removeImageFormState={removeImageFormState}
+              isProductCreated={false}
+            />
+          ))}
+        </div>
+        <Btn
+          label={isLoading ? 'Loading' : 'Add Product'}
+          onClick={handleSubmit(onSubmit)}
+          className="mt-4"
+        />
+      </div>
+      
     )
 }
 
