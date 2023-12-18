@@ -10,7 +10,7 @@ const page = () => {
         {catagories.map((category)=>{
           
         
-          return <div class="category-card bg-white overflow-hidden border border-gray-300 m-2 relative  " key={category.label}>
+          return <div class="category-card bg-white overflow-hidden border border-gray-300 m-2 relative" key={category.label}>
         <Image src={category.img} width={200} height={200} alt='category image' class="object-cover w-full h-full" />
         <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center p-2">
         <p>{category.label}</p>
