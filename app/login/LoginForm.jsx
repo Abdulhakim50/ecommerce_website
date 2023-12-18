@@ -52,11 +52,11 @@ const LoginForm = ({currentUser}) => {
        return <p>Login redirecting......</p>
       }
     return (
-        <div class=" h-full flex mt-20 justify-center max-sm:mt-5">
+        <div class=" h-full flex mt-20 justify-center max-sm:mt-0">
 
         <div class="bg-white p-8 rounded shadow-md max-w-md w-full">
         
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Sign In</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Sign In</h2>
         
         
             <div class="mb-4">
