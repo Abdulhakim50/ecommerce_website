@@ -51,7 +51,7 @@ const Nav = ({currentUser}) => {
     const params= handleInput();
     replace(`/search?${params.toString()}`);
    }
-
+   
 
   return (
     <>
@@ -101,7 +101,7 @@ const Nav = ({currentUser}) => {
       <p className='text-white text-center mt-5  text-lg'>CATEGORIES</p>
       <div className=' '>
       {catagories.map((category)=>(
-              <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500  border-gray-500 p-5 text-center'>{category.label}</option>
+              <option onClick={()=>{router.refresh(); router.push(`categoryPage/${category.label.toLowerCase()}`);  }}  key={category.label} value={category.label} className='text-green-500  border-gray-500 p-5 text-center'>{category.label}</option>
           ))}
       </div>
      </div>

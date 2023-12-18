@@ -67,93 +67,45 @@ const Form = ({currentUser}) => {
            return <p>Login redirecting......</p>
         }
         return (
+            <div class=" h-screen flex items-center justify-center">
 
-            <div classNameName="flex">
-                <div className="container mx-auto">
-                    <div className="flex justify-center px-6 my-12">
-
-                        <div className="w-full xl:w-3/4 lg:w-11/12 flex">
-
-                            <div
-                                className="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg limg"
-
-                            ></div>
-
-                            <div className="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
-                                <h3 className="pt-4 text-2xl text-center">Create an Account!</h3>
-                                <button className="flex flex-wrap justify-center w-full border border-gray-300 hover:border-gray-500 px-2 py-1.5 rounded-md" 
-                                 onClick={() => {signIn("google")}}>
-
-                                    <Image className="w-5 mr-2" src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
-                                        width={300}
-                                        height={600}
-                                        alt="login image"
-
-                                      
-                                    />
-                                    Sign up with Google
-                                </button>
-                                <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded" >
-                
-                                    <div className="mb-4 md:flex md:justify-between">
-                                        <div className="mb-4 md:mr-2 md:mb-0">
-                                            <label className="block mb-2 text-sm font-bold text-gray-700" for="Name">
-                                                First Name
-                                            </label>
-                                            <Input id="name" label="Name" disabled={loading} register={register} errors={errors} required />
-                                        </div>
-
-                                    </div>
-                                    <div className="mb-4">
-                                        <label className="block mb-2 text-sm font-bold text-gray-700" for="email">
-                                            Email
-                                        </label>
-                                        <Input id="email" label="Email" disabled={loading} register={register} errors={errors} required />
-
-                                    </div>
-                                    <div className="mb-4 md:flex md:justify-between">
-                                        <div className="mb-4 md:mr-2 md:mb-0">
-                                            <label className="block mb-2 text-sm font-bold text-gray-700" for="password">
-                                                Password
-                                            </label>
-                                            <Input id="password" label="Password" disabled={loading} register={register} errors={errors} required type="password" />
-
-
-                                        </div>
-
-                                    </div>
-                                    <div className="mb-6 text-center">
-                                        <button
-                                            className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-                                            type="button"
-                                            onClick={handleSubmit(onSubmit)}
-                                        >
-                                            {loading ? "loading" : "signun"}
-                                        </button>
-                                    </div>
-                                    <hr className="mb-6 border-t" />
-                                    <div className="text-center">
-                                        <a
-                                            className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                                            href="#"
-                                        >
-                                            Forgot Password?
-                                        </a>
-                                    </div>
-                                    <div className="text-center">
-                                        <   Link
-                                            className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                                            href="/login"
-                                        >
-                                            Already have an account? Login!
-                                        </Link>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+            <div class="bg-white p-8 rounded shadow-md max-w-md w-full">
+            
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Sign Up</h2>
+            
+                <div class="mb-4">
+                    <label htmlFor="firstName" class="block text-gray-700 text-sm font-bold mb-2">First Name</label>
+                    <Input id="name" label="Name" disabled={loading} register={register} errors={errors} required className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"/>                </div>
+            
+            
+                <div class="mb-4">
+                    <label htmlFor="lastName" class="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
+                    <Input id="email" label="Email" disabled={loading} register={register} errors={errors} required className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" />                </div>
+            
+            
+                <div class="mb-6">
+                    <label htmlFor="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                    <Input id="password"  disabled={loading} register={register} errors={errors} required type="password" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"/>
                 </div>
+            
+               
+                <button class="bg-blue-500 text-white rounded-full px-4 py-2 w-full hover:bg-blue-600">
+                    Sign Up
+                </button>
+            
+                
+                <button class="bg-red-500 text-white rounded-full px-4 py-2 w-full mt-4">
+                    Sign Up with Google
+                </button>
+            
+                <p class="mt-4 text-gray-600 text-sm text-center">
+                    Already have an account? <a href="#" class="text-blue-500">Log in</a>
+                </p>
+            
             </div>
+            
+            </div>
+            
 
         )
     }
