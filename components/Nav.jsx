@@ -70,7 +70,7 @@ const Nav = ({currentUser}) => {
    </button>
 </div>
 
-<div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen bg-[#333333]  p-4 overflow-y-auto transition-transform -translate-x-full  w-80  items-center  overflow-y-auto" tabindex="-1" aria-labelledby="drawer-label">
+<div id="drawer-example" class="fixed top-0 left-0 z-40 h-screen bg-[#333333]  p-4 overflow-y-auto transition-transform -translate-x-full  w-80  items-center  " tabindex="-1" aria-labelledby="drawer-label">
    <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
   </svg>ethiomarket</h5>
@@ -101,7 +101,7 @@ const Nav = ({currentUser}) => {
       <p className='text-white text-center mt-5  text-lg'>CATEGORIES</p>
       <div className=' '>
       {catagories.map((category)=>(
-              <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500  border-gray-500 p-5 '>{category.label}</option>
+              <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500  border-gray-500 p-5 text-center'>{category.label}</option>
           ))}
       </div>
      </div>
