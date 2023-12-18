@@ -6,7 +6,7 @@ const page = () => {
 
 <div class="bg-gray-100 h-screen flex items-center justify-center">
 
-<div class="bg-white p-8 rounded shadow-md max-w-md w-full">
+<div class="bg-white p-8 rounded shadow-md max-w-lg w-full">
 
     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Sign Up</h2>
 
@@ -26,10 +26,13 @@ const page = () => {
         <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
         <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="********"/>
     </div>
-
+    <div class="mb-6">
+        <label for="confirmPassword" class="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="********"/>
+    </div>
    
-    <button class="bg-blue-500 text-white rounded-full px-4 py-2 w-full hover:bg-blue-600">
-        Sign Up
+    <button class="bg-blue-500 text-white rounded-full px-4 py-2 w-full hover:bg-blue-600" onClick={handleSubmit(onSubmit)}>
+    {loading ? "loading" : "signun"}
     </button>
 
     
