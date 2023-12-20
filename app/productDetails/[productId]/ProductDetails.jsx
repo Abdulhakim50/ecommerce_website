@@ -79,60 +79,61 @@ const ProductDetails = ({ product }) => {
     return (
 
 
-        <div className='grid grid-cols-1 md:grid-cols-2'>
-            <div>
-                <ProductImg cartProduct={cartProduct} product={product} handleColorSelect={handleColorSelect} />
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+
+        {/* Left side with product image */}
+        <div className="">
+            <ProductImg cartProduct={cartProduct} product={product} handleColorSelect={handleColorSelect} />
+        </div>
+    
+        {/* Right side with product details */}
+        <div className="bg-green-800 p-6 rounded-lg text-white">
+    
+            <h2 className='text-4xl font-semibold mb-4'>{product.name}</h2>
+            <div className='text-3xl font-bold mb-4'>${formatPrice(product.price)}</div>
+            <div className='flex items-center gap-2 mb-4'>
+                <Rating value={productRating} readOnly />
+                <div>{product.reviews.length} reviews</div>
             </div>
+            <hr className='w-1/4 my-4 border-t-2 border-green-600' />
+            <div className='text-justify mb-4'>{product.description}</div>
+            <hr className='w-1/4 my-4 border-t-2 border-green-600' />
+            <div className='mb-4'>
+                <span className='font-semibold'>CATEGORY:</span> {product.category}
+            </div>
+            <div className='mb-4'>
+                <span className='font-semibold'>BRAND:</span> {product.brand}
+            </div>
+            <div className={product.inStock ? "text-green-400":"text-rose-400 mb-4"}>{product.inStock?'In stock' : 'Out of stock'}</div>
+            <hr className='w-1/4 my-4 border-t-2 border-green-600' />
+    
+            <span className="text-yellow-500 block mb-4">Product added to cart</span>
             <div>
-                <h2 className='text-3xl font-medium text-slate-700'>{product.name}</h2>
-                <div className=' text-2xl font-bold'>{formatPrice(product.price)}</div>
-                <div className='flex gap-2'>
-                    <Rating value={productRating} readOnly />
-                    <div>{product.reviews.length} reviews</div>
-                </div>
-                 <hr className='w-[30% ]my-2' />
-                <div className='text-justify'>{product.description}</div>
-                <hr className='w-[30%] my-2' />
-                <div><span className='font-semibold'>CATEGORY:</span>{product.catagory}</div>
-                <div><span className='font-semibold'>BRAND:</span>{product.brand}</div>
-                 <div className={product.inStock ? " text-teal-400":"text-rose-400"}>{product.inStock?'In stock' : 'Out of stock'}</div>
-                 <hr className='w-[30%] my-2' />
-
-
-               
-
-                <span>Product added to cart</span>
-                <div>
-                    {isProductInCart ? (<>
-                        <p className="mb-2 text-slate-500 flex item-center gap-1">
-                            checkCircle
-
+                {isProductInCart ? (
+                    <>
+                        <p className="mb-4 text-green-400 flex items-center gap-2">
+                            check_circle
                         </p>
-                        <div className="max-x-[300px]">
-                            <Btn label="View Cart" outline onClick={() => {
-                                router.push("/cart")
-
-                            }} />
+                        <div className="max-w-[200px]">
+                            <Btn label="View Cart" outline onClick={() => router.push("/cart")} />
                         </div>
-                    </>)
-                        :
-
-                        (<>
-
-                            <SetColor cartProduct={cartProduct} images={product.images} handleColorSelect={handleColorSelect} />
-                            <div>
+                    </>
+                ) : (
+                    <>
+                        <SetColor cartProduct={cartProduct} images={product.images} handleColorSelect={handleColorSelect} />
+                        <div className="mb-4">
                             <SetQuantity cartProduct={cartProduct} handleQtyDecrease={handleQuantityDecrease} handleQtyIncrease={handleQuantityIncrease} />
-                            <div className="max-w-[300px]">
+                            <div className="max-w-[200px]">
                                 <Btn label="Add To Cart" onClick={() => handleAddToCart(cartProduct)} />
                             </div>
-                            </div>
-                            </>
-                        )}
-
-
-                </div>
+                        </div>
+                    </>
+                )}
             </div>
         </div>
+    </div>
+    
+
 
     )
 }

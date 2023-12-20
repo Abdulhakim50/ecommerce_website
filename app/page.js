@@ -1,6 +1,6 @@
 
 import Catagories from '@/components/Catagories'
-import Hero from '@/components/Hero'
+import  HeroSlider from '@/components/HeroSlider'
 import Newarrival from '@/components/Newarrival'
 import Electronics from '@/components/Electronics'
 import MostViewed from '@/components/MostViewed'
@@ -28,6 +28,7 @@ export default async function Home({searchParams}) {
       
   
    <Catagories/>
+   <HeroSlider/>
     <Newarrival dynamicProducts={dynamicProducts}/>
      <MostViewed dynamicProducts={dynamicProducts}/>
 

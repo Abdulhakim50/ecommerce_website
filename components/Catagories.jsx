@@ -25,7 +25,7 @@ const Catagories = () => {
  
     {/* description */}
  
-    <div className='w-full bg-green-500 h-[60px] mt-5  '>
+    <div className='w-full bg-green-500 h-[60px] mt-5 max-sm:hidden  '>
     <div className='flex justify-evenly gap-0 '>
   
     <div className='flex gap-4 mt-5 '>
@@ -37,7 +37,7 @@ const Catagories = () => {
     </div>
     </div>
     
-     <div className='flex justify-evenly hro bg-no-repeat mt-0px w-full bg-gray-400 '>
+     <div className='flex justify-evenly hro bg-no-repeat mt-0px w-full bg-gray-400 max-sm:hidden '>
 
       <div className='  bg-white h-[600px] w-[300px]  flex flex-col  relative top-[-60px] max-[1019px]:hidden'>
       <div className=' p-3 flex gap-3 items-center  '>
