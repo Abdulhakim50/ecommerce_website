@@ -47,7 +47,7 @@ const FilterInput = () => {
 
     <div>
       <p className='text-center bg-green-500'>price</p>
-    <div className='grid grid-cols-2 gap-5 px-5 overflow-hidden'>
+    <div className='grid grid-cols-2 gap-5 px-5 overflow-hidden max-sm:grid-cols-1 max-sm:gap-2'>
      
     <div className='flex flex-col justify-center items-center'>
 

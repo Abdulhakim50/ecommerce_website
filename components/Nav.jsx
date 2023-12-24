@@ -18,6 +18,7 @@ import ShowWishListQty from './ShowWishListQty';
 const Nav = ({currentUser}) => {
     const {openn,setOpenn}=useCart()
   const [open, setopen] = useState(false)
+  const [searchOpen, setsearchOpen] = useState(false)
   const [ope, setope] = useState(false)
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -31,7 +32,10 @@ const Nav = ({currentUser}) => {
    }
    
 
-
+   const handleSearchOpen=()=>{
+    setsearchOpen(!searchOpen)
+   }
+   
   
    const handleInput = useDebouncedCallback((term) => {
     console.log(`Searching... ${term}`);
@@ -62,7 +66,7 @@ const Nav = ({currentUser}) => {
 
   return (
     <>
-  
+     <div className='flex flex-col'>
       <div className='flex items-center justify-evenly pt-5' >
 
         
@@ -171,7 +175,7 @@ const Nav = ({currentUser}) => {
      
       <div className='flex border border-green-500  max-lg:border-none'>
         <div className='max-md:hidden'>
-       <select className=' border-none h-[60px] w-[250px] px-10 text-green-500 '   
+       <select className=' border-none h-[60px] w-[200px] px-10 text-green-500 '   
     
         >
           {catagories.map((category)=>(
@@ -191,12 +195,12 @@ const Nav = ({currentUser}) => {
             handleInput(e.target.value);
           }}    defaultValue={searchParams.get('query')?.toString()}/>
 
-         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={`lg:hidden ${open? 'max-lg:absolute max-lg:top-[70px] max-lg:left-[250px] max-sm:left-[220px] text-2xl': 'max-lg:hidden'}`}  onClick={handle}>
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' md:bg-green-600 w-[100px] h-[60px] max-sm:w-[20px] h-[20px]  text-white  max-lg:text-green-500 max-lg:text-xl md:hidden' onClick={handleSearchOpen}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>
 
        
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' md:bg-green-600 w-[100px] h-[60px] max-sm:w-[20px] h-[20px]  text-white  max-lg:text-green-500 max-lg:text-xl' onClick={handleSearch}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' md:bg-green-600 w-[100px] h-[60px] max-sm:w-[20px] h-[20px]  text-white  max-lg:text-green-500 max-lg:text-xl max-md:hidden' onClick={handleSearch}>
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>
 
@@ -225,7 +229,7 @@ const Nav = ({currentUser}) => {
 
           <p className='text-4xl'></p>
         
-        <div className=' text-sm'>{currentUser ?currentUser.name:Account}</div>
+        <div className=' text-sm'>{currentUser ?currentUser?.name:'Account'}</div>
           </div>
        
         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-32">
@@ -249,6 +253,26 @@ const Nav = ({currentUser}) => {
     
         
       </div>
+    </div>
+    {searchOpen &&
+    <div className="relative flex items-center mx-auto w-[80%] md:hidden">
+    <input
+      type="text"
+      placeholder="Search products..."
+      className="py-2 px-4 w-[80%] border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 "
+      onChange={(e) => {
+        handleInput(e.target.value);
+      }}    defaultValue={searchParams.get('query')?.toString()}
+
+    />
+   
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"       className="absolute right-0 top-0 h-full px-4 bg-green-500 text-white rounded-r-md flex items-center justify-center hover:bg-blue-600 focus:outline-none"
+ onClick={handleSearch}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+</svg>
+   
+  </div>
+}
     </div>
     </>
   )

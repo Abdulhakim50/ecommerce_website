@@ -30,7 +30,7 @@ const FilterCategory = () => {
     <div className='grid grid-cols-3 gap-5 max-sm:grid-cols-2'>
    
      {catagories.map((cat)=>{
-      return  <div className='cursor-pointer ml-5' key={cat.label}  onClick={() => handleCatChange(cat.label)}  >{cat.label}</div>
+      return  <div className='cursor-pointer ml-5 max-md:text-sm' key={cat.label}  onClick={() => handleCatChange(cat.label)}  >{cat.label}</div>
      })}
     </div>
     </>
