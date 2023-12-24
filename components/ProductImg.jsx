@@ -14,7 +14,7 @@ const ProductImg = ({cartProduct,product,handleColorSelect}) => {
             <div
                 key={index}
                 onClick={() => handleColorSelect(image)}
-                className={`relative w-[50%] aspect-square rounded border-teal-300 mx-auto ${cartProduct.selectedImg.color === image.color ? "border-[1.5px]" : "border-none"}`}
+                className={`relative w-[100%]  aspect-square rounded border-teal-300 mx-auto ${cartProduct.selectedImg.color === image.color ? "border-[1.5px]" : "border-none"}`}
             >
                 <Image src={image.image} alt={image.color} fill className="object-cover" />
             </div>

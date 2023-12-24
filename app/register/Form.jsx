@@ -67,7 +67,10 @@ const Form = ({currentUser}) => {
 
 
        if (currentUser) {
-           return <p>Login redirecting......</p>
+           return <><span className="loading loading-dots loading-xs"></span>
+           <span className="loading loading-dots loading-sm"></span>
+           <span className="loading loading-dots loading-md"></span>
+           <span className="loading loading-dots loading-lg"></span> </> 
         }
         return (
             <div class=" h-screen flex mt-20 justify-center max-sm:mt-0">

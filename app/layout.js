@@ -26,7 +26,7 @@ const currentUser= await getCurrentUser()
   return (
     <html lang="en">
     
-      <body className=' bg-white'>
+      <body >
 
         <Toaster toastOptions={{
           style: {

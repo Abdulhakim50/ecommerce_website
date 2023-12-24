@@ -2,9 +2,11 @@ import React from 'react'
 import NewarrivalCard from './NewarrivalCard';
 import Image from 'next/image';
 import Nulldata from './Nulldata';
+import getProductById from '@/actions/getProductById';
 
 
-const Newarrival = ({dynamicProducts}) => {
+const Newarrival = async({dynamicProducts}) => {
+
 
     if(dynamicProducts.length === 0){
         return <Nulldata  title={'Oops! No product found.Click "All" to clear filters'}/>

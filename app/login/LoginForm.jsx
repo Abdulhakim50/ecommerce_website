@@ -49,10 +49,19 @@ const LoginForm = ({currentUser}) => {
     };
 
    if(currentUser){
-       return <p>Login redirecting......</p>
+       return <>
+       <div className='text-center mt-auto'>
+       <span className="loading loading-dots loading-xs"></span>
+<span className="loading loading-dots loading-sm"></span>
+<span className="loading loading-dots loading-md"></span>
+<span className="loading loading-dots loading-lg"></span>
+       </div>
+    
+       </>
       }
     return (
-        <div class=" h-full flex mt-20 justify-center max-sm:mt-0">
+        
+        <div class={`h-full flex mt-20 justify-center max-sm:mt-0 ${currentUser && 'hidden' }`}>
 
         <div class="bg-white p-8 rounded shadow-md max-w-md w-full">
         

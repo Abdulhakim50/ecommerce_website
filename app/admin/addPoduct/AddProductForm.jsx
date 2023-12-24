@@ -235,7 +235,7 @@ const AddProductForm = () => {
             {catagories.map((item) => (
               <div key={item.label} className="col-span-1">
                 <CatagoryInput
-                  onClick={(category) => setCustomValue('category', category)}
+                  onClick={(catagory) => setCustomValue('catagory', catagory)}
                   selected={catagory === item.label}
                   label={item.label}
                   icon={item.icon}

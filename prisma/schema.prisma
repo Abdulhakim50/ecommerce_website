@@ -56,7 +56,6 @@ model Product{
     inStock       Boolean
     images         Image[]
     reviews       Review[]
- 
 
 }
 model Review{

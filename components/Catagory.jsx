@@ -41,8 +41,8 @@ const handleClick =useCallback(()=>{
 
   return (
     <>
-         <div class="dropdown dropdown-hover dropdown-right  w-96 h-11 p-2 cursor-pointer" onClick={()=>router.push(`categoryPage/${item.label.toLowerCase()}`)} >
-      <div className='flex items-center content-center '>
+         <div class="dropdown dropdown-hover dropdown-right  w-96 h-11 p-2 cursor-pointer " onClick={()=>router.push(`categoryPage/${item.label.toLowerCase()}`)} >
+      <div className='flex  '>
        <div className=' text-5xl text-green-500'>{item.icon}</div>
       <div tabindex="0" className='flex-col'>
         <span></span>{item.label}

@@ -6,8 +6,8 @@ import Image from 'next/image'
 import SetQuantity from '@/components/SetQuantity'
 import { useCart } from '@/hooks/useCart'
 
-const ItemContent = ({item}) => {
-    const {handleRemoveCart,handleCartQtyInc,handleCartQtyDec, handleClearCart}=useCart()
+const WishList = ({item}) => {
+    const {handleRemoveWishList, handleClearCart}=useCart()
   
   return (
     <tbody class="divide-y divide-gray-300">
@@ -26,16 +26,14 @@ const ItemContent = ({item}) => {
         </div>
       </td>
       <td class="py-4 px-6 text-left border-b">{formatPrice(item.price)}</td>
+
+ 
       <td class="py-4 px-6 text-left border-b">
-      <SetQuantity cartCounter={true} cartProduct={item}  handleQtyIncrease={()=> handleCartQtyInc(item)} handleQtyDecrease={()=>handleCartQtyDec(item)}/>
-      </td>
-      <td class="py-4 px-6 text-left border-b">{formatPrice(item.price * item.quantity)} </td>
-      <td class="py-4 px-6 text-left border-b">
-        <button class="text-red-500 hover:underline" onClick={() =>  handleRemoveCart(item)}>Remove</button>
+        <button class="text-red-500 hover:underline" onClick={() =>  handleRemoveWishList(item)}>Remove</button>
       </td>
     </tr>
   </tbody>
   )
 }
 
-export default ItemContent
+export default WishList

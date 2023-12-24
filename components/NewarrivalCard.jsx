@@ -6,8 +6,13 @@ import Image from 'next/image';
 import formatPrice from '@/utils/formatPrice';
 import { useRouter } from 'next/navigation';
 import truncateDesc from '@/utils/trunctedDesc';
+import { useCart } from '@/hooks/useCart';
+import Btn from './Btn';
+import { useEffect } from 'react';
 
 const NewarrivalCard = ({data}) => {
+
+
 
     const router=useRouter()
     const productRating=data.reviews.reduce((acc,item)=>
@@ -28,8 +33,8 @@ const NewarrivalCard = ({data}) => {
       </div>
 
       <div className="p-4 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity">
-        <button className="bg-green-500 text-white py-2 px-4 ">
-          Add to Cart
+        <button className="bg-green-500 text-white py-2 px-4 "  >
+         Add To Cart
         </button>
       </div>
        <div><Rating value={productRating} readOnly/></div>

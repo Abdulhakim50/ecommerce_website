@@ -9,7 +9,7 @@ import Nulldata from '@/components/Nulldata'
 import { SessionProvider } from 'next-auth/react'
 
 
-export default async function Home({searchParams}) {
+export default async function Home({searchParams,params}) {
   const products =await getProduct(searchParams)
 
   if(products.length===0){
@@ -25,7 +25,6 @@ export default async function Home({searchParams}) {
    const dynamicProducts=shuffleArry(products)
   return (
     <main className=" ">
-      
   
    <Catagories/>
    <HeroSlider/>

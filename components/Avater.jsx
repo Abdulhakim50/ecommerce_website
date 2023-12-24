@@ -13,7 +13,7 @@ if (src){
     />
 }
   return (
-    FiPauseCircle
+    <p>FiPauseCircle</p>
   )
 }
 

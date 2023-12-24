@@ -7,17 +7,24 @@ export const CartContext=createContext(null)
 export const CartContextProvider=(props)=>{
 
     const [cartTotalQty, setcartTotalQty] = useState(0)
+    const [wishListTotalQty, setWishListTotalQty] = useState(0)
      const [cartProducts, setcartProducts] = useState(null)
+     const [WishListProducts, setWishListProducts] = useState(null)
      const [cartTotal, setcartTotal] = useState(0)
+     const [wishListTotal, setWishListTotal] = useState(0)
      const [paymentIntent, setpaymentIntent] = useState(null)
      const [openn,setOpenn]=useState(false)
 
      useEffect(() => {
        const cartItems=localStorage.getItem('CartItems')
+       const wishListItems=localStorage.getItem('WishListItems')
       const  cProducts=JSON.parse(cartItems)
+      const  wProducts=JSON.parse(wishListItems)
       const ethioMarketPi=localStorage.getItem('ethioMarket')
       const paymentIntent=JSON.parse(ethioMarketPi)
         
+
+      setWishListProducts(wProducts)
         setcartProducts(cProducts)
         setpaymentIntent(paymentIntent)
      }, []);
@@ -43,6 +50,28 @@ export const CartContextProvider=(props)=>{
        }
        getTotal();
       }, [cartProducts])
+
+      useEffect(() => {
+        const getTotal=()=>{
+         if(WishListProducts){
+             const {total,qty}=WishListProducts?.reduce((acc,item)=>{
+               const itemTotal=item.price*item.quantity
+     
+                 acc.total +=itemTotal
+                 acc.qty +=item.quantity
+     
+                 return acc
+             },{
+                 total:0,
+                 qty:0
+             })
+             setWishListTotalQty(qty)
+             setWishListTotal(total)
+         }
+        
+        }
+        getTotal();
+       }, [WishListProducts])
       
      
 
@@ -62,6 +91,22 @@ export const CartContextProvider=(props)=>{
        },
        [],
      )
+     const handleAddToWishList=useCallback(
+      (product) => {
+        setWishListProducts((prev)=>{
+           let updateCart;
+           if(prev){
+               updateCart=[...prev,product]
+           }else{
+               updateCart=[product]
+           }
+            toast.success('product added to WishList')
+           localStorage.setItem('WishListItems',JSON.stringify(updateCart))
+           return updateCart
+        })
+      },
+      [],
+    )
      const handleRemoveCart=useCallback(
        (product) => {
          const filterProduct=cartProducts.filter((item)=>{
@@ -73,6 +118,18 @@ export const CartContextProvider=(props)=>{
        },
        [cartProducts],
      )
+
+     const handleRemoveWishList=useCallback(
+      (product) => {
+        const filterProduct=WishListProducts.filter((item)=>{
+           return item.id !== product.id
+        })
+        setWishListProducts(filterProduct)
+        toast.success('product removed')
+        localStorage.setItem('WishListItems',JSON.stringify(filterProduct))
+      },
+      [WishListProducts],
+    )
      
     const handleCartQtyInc=useCallback(
       (product) => {
@@ -143,10 +200,15 @@ export const CartContextProvider=(props)=>{
     const value={
         openn,
         setOpenn,
+        wishListTotalQty,
         cartTotalQty,
         cartTotal,
+        wishListTotal,
         cartProducts,
         handleAddToCart,
+        WishListProducts,
+        handleAddToWishList,
+        handleRemoveWishList,
         handleRemoveCart,
         handleCartQtyInc,
         handleCartQtyDec,
