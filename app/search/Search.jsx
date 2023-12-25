@@ -32,20 +32,21 @@ const SearchPage = ({products,totalPages}) => {
       <FilterCategory />
     </div>
     <div className="container  my-8 col-span-2">
-      <h1 className="text-3xl font-bold mb-6 max-sm:text-center">Search results</h1>
+      <h1 className="text-3xl font-bold mb-6 max-sm:text-cen
+      ter">Search results</h1>
       <div className="grid max-sm:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  items-center">
  
        { products.map((product) => (
         <Suspense fallback={<ProductSkeleton />} key={product.id}>
-          <div key={product.id} className="relative group bg-white p-4 rounded-md shadow-md overflow-hidden">
+          <div key={product.id} className="relative group hover:shadow-md hover:scale-110 p-4  overflow-hidden">
             <Image
                  src={product.images[0].image} // Replace with the correct path to your image
               alt={product.name}
               width={200}
               height={200}
-              className="w-full h-40 object-cover mb-2 rounded-md group-hover:opacity-75 transition duration-300 ease-in-out"
+              className="w-full h-40 object-cover mb-2  group-hover:opacity-75 transition duration-300 ease-in-out"
             />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 hover:translate-y-0 transition duration-500 ease-in-out hover:border hover:border-b-2 hover:border-black ">
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 hover:translate-y-0 transition duration-500 ease-in-out    ">
               <button className="bg-white text-green-500 px-4 py-2  w-full hover:bg-green-500 hover:text-white transform translate-y-4 hover:translate-y-0 transition duration-300 ease-in-out">
                 Add to Cart
               </button>

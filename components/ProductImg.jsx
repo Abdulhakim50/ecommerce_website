@@ -8,7 +8,7 @@ const ProductImg = ({cartProduct,product,handleColorSelect}) => {
     <div className="grid grid-cols-6 gap-2 h-full max-h-[500px] min-h-[300px sm:min-h-[400px] flex items-center">
 
     {/* Color variations */}
-    <div className="col-span-1 flex flex-col items-center justify-center gap-4 cursor-pointer h-full max-h-[500px] min-h-[300px sm:min-h-[400px] mt-10">
+    <div className="col-span-1 flex flex-col items-center justify-between gap-4 cursor-pointer h-full max-h-[500px] min-h-[300px sm:min-h-[400px] mt-10">
 
         {product.images.map((image, index) => (
             <div
@@ -29,7 +29,7 @@ const ProductImg = ({cartProduct,product,handleColorSelect}) => {
             alt={cartProduct.name}
             width={400}
             height={400}
-            className="w-full h-full object-contain mt-16"
+            className="w-full h-full mt-16"
         />
     </div>
 </div>

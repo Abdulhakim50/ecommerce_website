@@ -66,15 +66,15 @@ const Nav = ({currentUser}) => {
 
   return (
     <>
-   
-      <div className='flex items-center justify-evenly pt-5' >
+     <div className='flex flex-col'>
+      <div className='flex  items-center justify-evenly pt-3 ' >
 
         
 
 
        
         <div class=" md:hidden mt-2 ">
-   <button class="text-black font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example"  >
+   <button class="text-black font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 text-3xl" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example"  >
    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 </svg>
@@ -133,8 +133,8 @@ const Nav = ({currentUser}) => {
      <div>
       
      <div className='flex gap-10 justify-center text-white'>
-  <Link href='/login' data-drawer-hide="drawer-example" className='action-link'>SignIn</Link>
-  <Link href='/register' data-drawer-hide="drawer-example" className='action-link'>SignUp</Link>
+  <Link href='/login' data-drawer-hide="drawer-example" className='action-link  bg-[#2b2727] p-3 rounded-sm'>SignIn</Link>
+  <Link href='/register' data-drawer-hide="drawer-example" className='action-link  bg-[#2b2727] p-3 rounded-sm'>SignUp</Link>
 </div>
 </div>
 <div>
@@ -150,7 +150,7 @@ const Nav = ({currentUser}) => {
         key={category.label}
         value={category.label}
         aria-hidden="true"
-        className='category-item bg-[#2b2727]  p-4 rounded-md text-white hover:shadow-md'
+        className='category-item  p-4 rounded-md text-white hover:shadow-md'
       >
         <div className=" items-center">
           <span className="text-white">{category.label}</span>
@@ -169,7 +169,7 @@ const Nav = ({currentUser}) => {
 
 
 
-      <div className='text-green-500 font-bold max-sm:text-xl'>
+      <div className='text-green-500 font-bold '>
         <Link href='/' className='text-3xl max-sm:text-xl'>ethiomarket<spn className='text-black font-medium opacity-40'>.com</spn></Link>
       </div> 
      
@@ -179,7 +179,7 @@ const Nav = ({currentUser}) => {
     
         >
           {catagories.map((category)=>(
-              <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500 overflow-hidden'>{category.label}</option>
+              <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500 '>{category.label}</option>
           ))}
       
       
@@ -195,7 +195,7 @@ const Nav = ({currentUser}) => {
             handleInput(e.target.value);
           }}    defaultValue={searchParams.get('query')?.toString()}/>
 
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' md:bg-green-600 w-[100px] h-[60px] max-sm:w-[20px] h-[20px]  text-white  max-lg:text-green-500 max-lg:text-xl md:hidden' onClick={handleSearchOpen}>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=' md:bg-green-600 w-[30px] h-[30px]   text-white  max-lg:text-green-500 max-lg:text-xl md:hidden ' onClick={handleSearchOpen}>
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>
 
@@ -254,8 +254,26 @@ const Nav = ({currentUser}) => {
         
       </div>
     </div>
+    {searchOpen &&
+    <div className="relative flex items-center mx-auto w-[80%] md:hidden">
+    <input
+      type="text"
+      placeholder="Search products..."
+      className="py-2 px-4 w-[80%] border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 "
+      onChange={(e) => {
+        handleInput(e.target.value);
+      }}    defaultValue={searchParams.get('query')?.toString()}
+
+    />
    
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"       className="absolute right-0 top-0 h-full px-4 bg-green-500 text-white rounded-r-md flex items-center justify-center hover:bg-blue-600 focus:outline-none"
+ onClick={handleSearch}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+</svg>
    
+  </div>
+}
+    </div>
     </>
   )
 }

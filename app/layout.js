@@ -39,8 +39,8 @@ const currentUser= await getCurrentUser()
         <CartProvider>
 
           <div>
-          <NavHome/>
-       
+        
+       <NavHome/>
      
           
             <main >
@@ -48,7 +48,7 @@ const currentUser= await getCurrentUser()
               {children}
 
             </main>
-           <Footer/>
+         <Footer/>
           <FooterNav currentUser={currentUser}/>
           </div>
 

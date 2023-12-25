@@ -60,21 +60,40 @@ const AddRating = ({product,user}) => {
         return null
     }
   return (
-    <div>
-     <div>Add rating</div>
-    <Rating onChange={(event,newValue)=>{
-        setCustomValue('rating',newValue)
-    }}/>
-    <Input
-    id='comment'
-    label="Comment"
-    disabled={isLoading}
-    register={register}
-    errors={errors}
-    required
-    />
-    <Btn label={isLoading ? "Loading":'Rate Product'} onClick={handleSubmit(onSubmit)}/>
+    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
+    <h2 className="text-2xl font-semibold mb-4">Add Rating</h2>
+  
+    {/* Rating Component */}
+    <div className="mb-4">
+      <Rating
+        onChange={(event, newValue) => {
+          setCustomValue('rating', newValue);
+        }}
+      />
     </div>
+  
+    {/* Comment Input */}
+    <div className="mb-4">
+      <label htmlFor="comment" className="block text-sm font-medium text-gray-700">
+        Comment
+      </label>
+      <Input
+        id="comment"
+        label="Comment"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+        placeholder="Add your comment here..."
+        className="h-20 w-96 py-2" // Adjust the height and padding as needed
+      />
+    </div>
+  
+    {/* Submit Button */}
+    <Btn label={isLoading ? 'Loading' : 'Rate Product'} onClick={handleSubmit(onSubmit)} />
+  
+  </div>
+  
 
   )
 }

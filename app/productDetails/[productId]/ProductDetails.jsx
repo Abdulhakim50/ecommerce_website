@@ -12,11 +12,15 @@ import ProductImg from '@/components/ProductImg'
 import { useCart } from '@/hooks/useCart'
 import truncate from '@/utils/truncate'
 import Link from 'next/link'
+import AddRating from './AddRating'
+import ListRating from './ListRating'
+
+
 //import { useCartElementState } from '@stripe/react-stripe-js'
 
 import { useRouter } from 'next/navigation'
 
-const ProductDetails = ({ product }) => {
+const ProductDetails = ({ product,user }) => {
     const { handleAddToCart,handleAddToWishList, cartProducts,WishListProducts } = useCart()
     const [isProductInCart, setisProductInCart] = useState(false)
     const [isProductInWishList, setisProductInWishList] = useState(false)
@@ -97,7 +101,7 @@ const ProductDetails = ({ product }) => {
 
         <>
      
-     <div className='grid grid-cols-1 md:grid-cols-3 gap-12 items-start ml-20'>
+     <div className='grid grid-cols-1 md:grid-cols-3 gap-20 items-start ml-20'>
     {/* Left side with product image */}
     <div className="">
         <ProductImg cartProduct={cartProduct} product={product} handleColorSelect={handleColorSelect} />
@@ -144,6 +148,7 @@ const ProductDetails = ({ product }) => {
     <div className="mb-4">
         <div className="max-w-[300px] bg-green-200 p-5 rounded-xl gap-5 flex flex-col">
             <p className="text-lg font-semibold text-green-700">Fast Delivery</p>
+            <p className="text-lg font-semibold text-green-700">Up to Three Days</p>
             <SetQuantity cartProduct={cartProduct} handleQtyDecrease={handleQuantityDecrease} handleQtyIncrease={handleQuantityIncrease} />
             <div className="flex flex-col gap-2 justify-between items-center">
                 {!isProductInCart ?
@@ -162,13 +167,15 @@ const ProductDetails = ({ product }) => {
                     </button>}
             </div>
         </div>
+       
     </div>
 </div>
 <div className="col-span-1 md:col-span-2 mt-10 md:mt-20 text-left text-pretty text-balance text-wrap w-full md:w-3/4 lg:w-[800px] mx-auto">
     <p className="text-green-300 text-lg font-semibold mb-4 text-center">Product Description</p>
     <p className="text-gray-400" id="pd">{product.description}</p>
 </div>
-
+<AddRating user={user} product={product} />
+        <ListRating product={product} />
     
 </>
     )
