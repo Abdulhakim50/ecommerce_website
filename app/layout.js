@@ -48,7 +48,7 @@ const currentUser= await getCurrentUser()
               {children}
 
             </main>
-       
+           <Footer/>
           <FooterNav currentUser={currentUser}/>
           </div>
 

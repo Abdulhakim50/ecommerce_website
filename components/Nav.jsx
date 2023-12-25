@@ -66,7 +66,7 @@ const Nav = ({currentUser}) => {
 
   return (
     <>
-     <div className='flex flex-col'>
+   
       <div className='flex items-center justify-evenly pt-5' >
 
         
@@ -254,26 +254,8 @@ const Nav = ({currentUser}) => {
         
       </div>
     </div>
-    {searchOpen &&
-    <div className="relative flex items-center mx-auto w-[80%] md:hidden">
-    <input
-      type="text"
-      placeholder="Search products..."
-      className="py-2 px-4 w-[80%] border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 "
-      onChange={(e) => {
-        handleInput(e.target.value);
-      }}    defaultValue={searchParams.get('query')?.toString()}
-
-    />
    
-       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"       className="absolute right-0 top-0 h-full px-4 bg-green-500 text-white rounded-r-md flex items-center justify-center hover:bg-blue-600 focus:outline-none"
- onClick={handleSearch}>
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-</svg>
    
-  </div>
-}
-    </div>
     </>
   )
 }
