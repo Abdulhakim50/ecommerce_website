@@ -19,7 +19,7 @@ const SearchPage = ({products,totalPages}) => {
 
 
   return (
-    <div className="grid grid-cols-3 items-start mx-3">
+    <div className="grid grid-cols-3 items-start mx-3 max-sm:grid-cols-1">
     <div className="mt-12 flex flex-col gap-5 ">
       <div className="flex justify-around items-center">
         <p className="font-semibold">Filters:</p>
@@ -32,8 +32,8 @@ const SearchPage = ({products,totalPages}) => {
       <FilterCategory />
     </div>
     <div className="container  my-8 col-span-2">
-      <h1 className="text-3xl font-bold mb-6">Search results</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  items-center">
+      <h1 className="text-3xl font-bold mb-6 max-sm:text-center">Search results</h1>
+      <div className="grid max-sm:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  items-center">
  
        { products.map((product) => (
         <Suspense fallback={<ProductSkeleton />} key={product.id}>

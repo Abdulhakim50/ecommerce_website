@@ -25,8 +25,8 @@ const FilterCategory = () => {
     
       }, 300);
       return (
-        <>
-          <p className='text-center bg-green-500 text-sm md:text-md'>Category</p>
+        < div className='max-sm:hidden'>
+          <p className='text-center bg-green-500 text-sm md:text-md '>Category</p>
       
           <div className='grid grid-cols-3 gap-5 max-sm:grid-cols-2'>
             {catagories.map((cat) => (
@@ -39,7 +39,7 @@ const FilterCategory = () => {
               </div>
             ))}
           </div>
-        </>
+        </div>
       );
       
 }
