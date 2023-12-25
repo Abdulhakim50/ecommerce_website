@@ -9,7 +9,7 @@ const Footer = () => {
              <p class="text-gray-600 mb-4">We passionately believe in great bargains and excellent services for buyers and sellers. Most importantly, we firmly believe in high-quality products and exceptional customer services.</p>
          </div>
  
-         <div class="w-full md:w-1/4 mb-8 ">
+         <div class="w-full md:w-1/4 mb-8  ">
              <h4 class="text-lg font-bold mb-4 text-green-500">Useful Links</h4>
              <ul class="list-none">
                  <li><a href="#about" class="text-gray-600 hover:text-blue-500">About Ashewa</a></li>

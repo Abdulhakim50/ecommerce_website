@@ -17,6 +17,7 @@ export default async function getProduct(params){
         }
 
              const products =await prisma.product.findMany({
+                take: 6,
                 where:{
                     ...query,
 

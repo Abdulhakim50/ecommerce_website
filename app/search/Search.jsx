@@ -6,6 +6,7 @@ import { useState,useEffect, Suspense } from "react";
 import FilterCategory from "@/components/FilterCategory";
 import Pagination from "./Pagination";
 import Link from "next/link";
+import ProductSkeleton from "@/components/ProductSkeleton";
 
 
 
@@ -35,7 +36,7 @@ const SearchPage = ({products,totalPages}) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 flex-2 items-center">
  
        { products.map((product) => (
-        <Suspense>
+        <Suspense fallback={<ProductSkeleton />} key={product.id}>
           <div key={product.id} className="relative group bg-white p-4 rounded-md shadow-md overflow-hidden">
             <Image
                  src={product.images[0].image} // Replace with the correct path to your image
@@ -66,7 +67,7 @@ const SearchPage = ({products,totalPages}) => {
     </div>
 
      
-  );
+  ); 
 };
 
 export default SearchPage;

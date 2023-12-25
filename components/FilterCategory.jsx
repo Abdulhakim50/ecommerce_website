@@ -24,17 +24,24 @@ const FilterCategory = () => {
         replace(`${pathname}?${params.toString()}`);
     
       }, 300);
-  return (<>
-     <p className='text-center bg-green-500'>Category</p>
-
-    <div className='grid grid-cols-3 gap-5 max-sm:grid-cols-2'>
-   
-     {catagories.map((cat)=>{
-      return  <div className='cursor-pointer ml-5 max-md:text-sm' key={cat.label}  onClick={() => handleCatChange(cat.label)}  >{cat.label}</div>
-     })}
-    </div>
-    </>
-  )
+      return (
+        <>
+          <p className='text-center bg-green-500 text-sm md:text-md'>Category</p>
+      
+          <div className='grid grid-cols-3 gap-5 max-sm:grid-cols-2'>
+            {catagories.map((cat) => (
+              <div
+                className='cursor-pointer ml-5 max-md:text-sm'
+                key={cat.label}
+                onClick={() => handleCatChange(cat.label)}
+              >
+                {cat.label}
+              </div>
+            ))}
+          </div>
+        </>
+      );
+      
 }
 
 export default FilterCategory
