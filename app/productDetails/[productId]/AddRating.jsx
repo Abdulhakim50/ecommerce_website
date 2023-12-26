@@ -56,11 +56,10 @@ const AddRating = ({product,user}) => {
     const userReview=product?.reviews.find (((review)=>{
         return review.userId === user.id
     }))
-    if(userReview || !deliverOrder){
-        return null
-    }
+  
+  
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
+    <div className="max-w-full mx-auto p-6 bg-white shadow-md rounded-lg ">
     <h2 className="text-2xl font-semibold mb-4">Add Rating</h2>
   
     {/* Rating Component */}
@@ -77,6 +76,10 @@ const AddRating = ({product,user}) => {
       <label htmlFor="comment" className="block text-sm font-medium text-gray-700">
         Comment
       </label>
+      { !deliverOrder &&
+         <p className='text-red-600'>Please buy the broduct befor rating</p>
+      }
+     
       <Input
         id="comment"
         label="Comment"
@@ -90,7 +93,10 @@ const AddRating = ({product,user}) => {
     </div>
   
     {/* Submit Button */}
-    <Btn label={isLoading ? 'Loading' : 'Rate Product'} onClick={handleSubmit(onSubmit)} />
+    <Btn label={isLoading ? 'Loading' : 'Rate Product'} onClick={
+       userReview ?
+       <p className='text-red-600'>you rate the product already</p>  :   handleSubmit(onSubmit)} />
+     
   
   </div>
   

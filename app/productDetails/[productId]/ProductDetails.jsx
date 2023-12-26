@@ -101,7 +101,7 @@ const ProductDetails = ({ product,user }) => {
 
         <>
      
-     <div className='grid grid-cols-1 md:grid-cols-3 gap-20 items-start ml-20'>
+     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 items-start ml-20 max-lg:mx-auto'>
     {/* Left side with product image */}
     <div className="">
         <ProductImg cartProduct={cartProduct} product={product} handleColorSelect={handleColorSelect} />
@@ -110,25 +110,25 @@ const ProductDetails = ({ product,user }) => {
     {/* Right side with product details */}
     <div className="flex flex-col gap-1 text-gray-700 text-sm"> {/* Adjusted text color to a neutral gray */}
 
-        <h2 className='text-3xl font-medium text-black'>{product.name}</h2> {/* Darkened text color for better contrast */}
-        <div className='text-3xl font-bold mb-4'>{formatPrice(product.price)}</div>
-        <div className='flex items-center gap-2 '>
+        <h2 className='text-2xl font-semibold'>{product.name}</h2> {/* Darkened text color for better contrast */}
+        <div className='text-lg font-bold text-gray-800'>{formatPrice(product.price)}</div>
+        <div className='flex items-center '>
             <Rating value={productRating} readOnly />
-            <div>{product.reviews.length} reviews</div>
+            <div className='text-gray-600 ml-2'>{product.reviews.length} reviews</div>
         </div>
         <hr className='w-[30%] my-2' />
-        <div className='text-justify'>{product.description}<Link href='#pd'>read more</Link></div>
+        <div className='text-gray-700 mb-4'>{product.description}<Link href='#pd'>read more</Link></div>
         <hr className='w-[30%] my-2' />
         <div>
-            <span className='font-semibold'>CATEGORY:</span> {product.category}
+            <span className='font-bold'>CATEGORY:</span> {product.category}
         </div>
         <div>
-            <span className='font-semibold'>BRAND:</span> {product.brand}
+            <span className='font-bold'>BRAND:</span> {product.brand}
         </div>
         <div className={product.inStock ? "text-green-500" : "text-red-500 mb-4"}>{product.inStock ? 'In stock' : 'Out of stock'}</div> {/* Adjusted colors for in stock and out of stock */}
         <hr className='w-[30%] my-2' />
         <span className="text-yellow-500 block mb-4">Product added to cart</span>
-        <div className="items-center justify-between mb-4">
+        <div className="border p-4 shadow-md bg-white">
             {isProductInCart &&
                 <>
                     <p className="text-green-500 flex items-center gap-2">
@@ -145,8 +145,8 @@ const ProductDetails = ({ product,user }) => {
         </div>
     </div>
 
-    <div className="mb-4">
-        <div className="max-w-[300px] bg-green-200 p-5 rounded-xl gap-5 flex flex-col">
+    <div className="mb-4  flex flex-col gap-4 md:col-span-2 lg:col-span-1">
+        <div className="max-w-[400px] bg-green-200 p-5 rounded-xl gap-5 flex flex-col max-lg:max-w-full ">
             <p className="text-lg font-semibold text-green-700">Fast Delivery</p>
             <p className="text-lg font-semibold text-green-700">Up to Three Days</p>
             <SetQuantity cartProduct={cartProduct} handleQtyDecrease={handleQuantityDecrease} handleQtyIncrease={handleQuantityIncrease} />
@@ -167,16 +167,19 @@ const ProductDetails = ({ product,user }) => {
                     </button>}
             </div>
         </div>
-       
+        <div className='max-w-[400px]  shadow-md p-5 rounded-xl gap-5 flex flex-col max-lg:max-w-full'><ListRating product={product} /></div>
     </div>
 </div>
-<div className="col-span-1 md:col-span-2 mt-10 md:mt-20 text-left text-pretty text-balance text-wrap w-full md:w-3/4 lg:w-[800px] mx-auto">
+{/*<div className="col-span-1 md:col-span-2 mt-10 md:mt-20 text-left text-pretty text-balance text-wrap w-full md:w-3/4 lg:w-[800px] mx-auto">
     <p className="text-green-300 text-lg font-semibold mb-4 text-center">Product Description</p>
     <p className="text-gray-400" id="pd">{product.description}</p>
-</div>
-<AddRating user={user} product={product} />
-        <ListRating product={product} />
-    
+                </div>*/}
+<div className='mx-auto'>
+    <div className='flex-1'><AddRating user={user} product={product} /> </div>
+
+ 
+    </div>
+       
 </>
     )
 }

@@ -40,7 +40,7 @@ const currentUser= await getCurrentUser()
 
           <div>
         
-       <NavHome/>
+  <NavHome/>
      
           
             <main >

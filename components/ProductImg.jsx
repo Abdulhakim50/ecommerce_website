@@ -5,10 +5,10 @@ import Image from 'next/image'
 
 const ProductImg = ({cartProduct,product,handleColorSelect}) => {
   return (
-    <div className="grid grid-cols-6 gap-2 h-full max-h-[500px] min-h-[300px sm:min-h-[400px] flex items-center">
+    <div className="grid grid-cols-6 gap-2 h-full max-h-[500px] min-h-[300px sm:min-h-[400px] flex items-center ">
 
     {/* Color variations */}
-    <div className="col-span-1 flex flex-col items-center justify-between gap-4 cursor-pointer h-full max-h-[500px] min-h-[300px sm:min-h-[400px] mt-10">
+    <div className="col-span-1 flex flex-col max-md:flex items-center justify-between gap-4 cursor-pointer h-full max-h-[500px] min-h-[300px sm:min-h-[400px] mt-10">
 
         {product.images.map((image, index) => (
             <div
