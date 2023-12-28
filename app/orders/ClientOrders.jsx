@@ -91,27 +91,30 @@ const ClientOrders = ({ orders }) => {
 
 
     return (
-        <div>
-
-            <div>
-                <p>manageOrder</p>
-            </div>
+        <div className="p-8 bg-green-100">
+        <div className="mb-6">
+            <p className="text-center text-3xl font-bold text-green-700">Manage Orders</p>
+        </div>
+        <div className="w-full h-96 mb-6 bg-green-200">
             <DataGrid
                 rows={rows}
                 columns={columns}
-                initialState={{
-                    pagination: {
-                        paginationModel: { page: 0, pageSize: 5 },
-
-                    },
-                }}
+                pageSize={5}
                 pageSizeOptions={[9, 20]}
                 checkboxSelection
                 disableRowSelectionOnClick
-
+                components={{
+                    Toolbar: () => (
+                        <div className="bg-green-300 p-2 mb-4">
+                            {/* You can add toolbar components here if needed */}
+                        </div>
+                    ),
+                }}
+                getRowId={(row) => row.id}
+                rowsPerPageOptions={[5, 10, 20]}
             />
         </div>
-
+    </div>
     )
 }
 

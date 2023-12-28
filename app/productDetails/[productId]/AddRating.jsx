@@ -41,10 +41,14 @@ const AddRating = ({product,user}) => {
         router.refresh()
         reset()
      }).catch((error)=>{
-        toast.error('someting went wrong')
+      if(!deliverOrder)
+        {toast.error('buy the product befor  rating')}
+        if(userReview)
+        {toast.error('you review the product already')}
      }).finally(()=>{
         setisLoading(false)
      })
+        
    }
  
 
@@ -56,8 +60,8 @@ const AddRating = ({product,user}) => {
     const userReview=product?.reviews.find (((review)=>{
         return review.userId === user.id
     }))
-  
-  
+
+    
   return (
     <div className="max-w-full mx-auto p-6 bg-white shadow-md rounded-lg ">
     <h2 className="text-2xl font-semibold mb-4">Add Rating</h2>
@@ -76,9 +80,7 @@ const AddRating = ({product,user}) => {
       <label htmlFor="comment" className="block text-sm font-medium text-gray-700">
         Comment
       </label>
-      { !deliverOrder &&
-         <p className='text-red-600'>Please buy the broduct befor rating</p>
-      }
+   
      
       <Input
         id="comment"
@@ -89,13 +91,13 @@ const AddRating = ({product,user}) => {
         required
         placeholder="Add your comment here..."
         className="h-20 w-96 py-2" // Adjust the height and padding as needed
+        userReview={userReview}
+        deliverOrder={deliverOrder}
       />
     </div>
   
     {/* Submit Button */}
-    <Btn label={isLoading ? 'Loading' : 'Rate Product'} onClick={
-       userReview ?
-       <p className='text-red-600'>you rate the product already</p>  :   handleSubmit(onSubmit)} />
+    <Btn label={isLoading ? <span className="loading loading-spinner loading-md"></span> : 'Rate Product' } onClick={ handleSubmit(onSubmit)} />
      
   
   </div>

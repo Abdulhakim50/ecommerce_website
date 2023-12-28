@@ -14,13 +14,18 @@ import truncate from '@/utils/truncate'
 import Link from 'next/link'
 import AddRating from './AddRating'
 import ListRating from './ListRating'
+import { Suspense } from 'react'
+import ProductSkeleton from '@/components/ProductSkeleton'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 //import { useCartElementState } from '@stripe/react-stripe-js'
 
 import { useRouter } from 'next/navigation'
 
-const ProductDetails = ({ product,user }) => {
+const ProductDetails = ({ product,user,relatedProducts}) => {
     const { handleAddToCart,handleAddToWishList, cartProducts,WishListProducts } = useCart()
     const [isProductInCart, setisProductInCart] = useState(false)
     const [isProductInWishList, setisProductInWishList] = useState(false)
@@ -97,6 +102,42 @@ const ProductDetails = ({ product,user }) => {
     }, [cartProduct])
 
 
+
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,           // Enable autoplay
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+              breakpoint: 1024, // Large screens
+              settings: {
+                slidesToShow: 4,
+              },
+            },
+            {
+              breakpoint: 768, // Medium screens
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+                breakpoint: 600, 
+                settings: {
+                  slidesToShow: 3,
+                },
+              },
+            {
+              breakpoint: 480, // Small screens
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+          ],
+      };
     return (
 
         <>
@@ -117,7 +158,7 @@ const ProductDetails = ({ product,user }) => {
             <div className='text-gray-600 ml-2'>{product.reviews.length} reviews</div>
         </div>
         <hr className='w-[30%] my-2' />
-        <div className='text-gray-700 mb-4'>{product.description}<Link href='#pd'>read more</Link></div>
+        <div className='text-gray-700 mb-4 text-justify'>{product.description}<Link href='#pd'>read more</Link></div>
         <hr className='w-[30%] my-2' />
         <div>
             <span className='font-bold'>CATEGORY:</span> {product.category}
@@ -176,10 +217,46 @@ const ProductDetails = ({ product,user }) => {
                 </div>*/}
 <div className='mx-auto'>
     <div className='flex-1'><AddRating user={user} product={product} /> </div>
-
- 
     </div>
-       
+
+    <div>
+    <div className="container  my-8 col-span-2">
+          <h1 className="text-3xl font-bold mb-6 max-sm:text-cen
+          ter">Related Products</h1>
+
+<Slider
+  {...sliderSettings} >
+        {relatedProducts.map((relatedProduct)=>{
+          
+         
+         
+          return   <div key={relatedProduct.id} className="grid-cols-6 relative group hover:shadow-md hover:scale-110 p-4  overflow-hidden">
+            <Image
+                 src={relatedProduct.images[0].image} // Replace with the correct path to your image
+              alt={relatedProduct.name}
+              width={200}
+              height={200}
+              className="w-full h-40 object-cover mb-2  group-hover:opacity-75 transition duration-300 ease-in-out"
+            />
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 hover:translate-y-0 transition duration-500 ease-in-out    ">
+              <button className="bg-white text-green-500 px-4 py-2  w-full hover:bg-green-500 hover:text-white transform translate-y-4 hover:translate-y-0 transition duration-300 ease-in-out">
+                Add to Cart
+              </button>
+            </div>
+            <div className="text-center">
+            <p className="text-gray-600"> {relatedProduct.catagory}</p>
+            <h2 className="text-lg font-semibold mb-2 text-[#333333] text-[15.488px]">{relatedProduct.name}</h2>
+            <p className="text-gray-600 mb-2 text-green-500 ">${relatedProduct.price}</p>
+            <p className="text-gray-600 opacity-40">(Reviews: {relatedProduct.reviews.length})</p>
+            </div>
+          
+          </div>
+
+        })}
+        </Slider>
+    </div>
+    </div> 
+   
 </>
     )
 }

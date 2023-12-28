@@ -2,6 +2,8 @@ import prisma from "@/libs/prisma";
 
 
 
+
+
 export default async function getSearchResults(query,currentPage,filterMin,filterMax,filterCat) {
   const ITEMS_PER_PAGE =8;
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;

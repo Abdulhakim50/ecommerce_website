@@ -19,19 +19,11 @@ export const colors=[
         colorCode:"#FF0000",
         image:null
     },
-    {
-        color:"Gold",
-        colorCode:"#FFD700",
-        image:null
-    },
+   
     {
         color:"Blue",
         colorCode:"#0000FF",
         image:null
     },
-    {
-        color:"Graphite",
-        colorCode:"#383838",
-        image:null
-    },
+   
 ]

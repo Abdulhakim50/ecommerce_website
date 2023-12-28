@@ -4,7 +4,7 @@
 import React from 'react'
 import { UseFormRegister } from 'react-hook-form'
 
-const Input = ({id,label,type,disabled,register,required,errors,className,placeholder}) => {
+const Input = ({id,label,type,disabled,register,required,errors,className,placeholder, userReview,deliverOrder}) => {
   return (
    <div className="w-full relative">
     <input 
@@ -16,7 +16,7 @@ const Input = ({id,label,type,disabled,register,required,errors,className,placeh
       required: { value: required, message: `${label} is required` },
       minLength: type === 'password' ? { value: 7, message: 'Password must be at least 8 characters long' } : undefined,
       pattern: type === 'email' ? { value: /\S+@\S+\.\S+/, message: 'Invalid email address' } : undefined,
-          // Add any other validation rules as needed
+   
     })}
     placeholder={placeholder}
     type={type}
@@ -25,7 +25,10 @@ const Input = ({id,label,type,disabled,register,required,errors,className,placeh
     />
    
    {errors && errors[id] && (
-        <p className="text-red-500 text-sm mt-1">{errors[id].message}</p>
+        <p className="text-red-500 text-sm mt-1">{errors[id].message}
+            {userReview && <span>{' '}You already gave a review for this product.</span>}
+        </p>
+
       )}
    </div>
   )
