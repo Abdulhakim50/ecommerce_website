@@ -47,7 +47,7 @@ const CategorySection = () => {
       ],
   };
   return (
-    <div className="">
+    <div className="container">
     <h1 className='text-center text-2xl font-bold'>Popular category</h1>
     <Slider {...sliderSettings}>
       {catagories.map((cat) => (

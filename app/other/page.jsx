@@ -6,7 +6,7 @@ import { catagories } from '@/utils/Catagories'
 
 
 const page = () => {
-  const [selected,setSelected]=useState(null)
+  {/*const [selected,setSelected]=useState(null)
   const [enable,setEnabel]=useState(false)
   const  [multiple, setmultiple] = useState([])
   const  [color, setcolor] = useState("#000000")
@@ -59,13 +59,13 @@ function randomm (length){
   }
   function handleL (){
     sethover(rating)
-  }
+  }*/}
     
 
 
   return (
-   <>
-<div>
+ 
+{/*<div>
   <button className={enable ?'bg-red-500 p-3 rounded-lg text-white transition-transform': 'bg-green-500 p-3 rounded-lg text-white'} onClick={() => setEnabel(!enable)}>{enable ?'Disable Multiple Select'  : 'Enable Multiple Select' } </button>
   {catagories.map((cat)=>(
    <div className='flex flex-col'>
@@ -118,6 +118,9 @@ function randomm (length){
   </div>
    </>
   )
-}
+}*/}
+
+
+  )}
 
 export default page
