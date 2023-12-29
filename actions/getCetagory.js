@@ -1,10 +1,11 @@
 import prisma from '@/libs/prisma'
 
-export async function getProductByCategory(catagory) {
+export async function getProductByCategory(category) {
+  
     try {
       const products = await prisma.product.findMany({
         where: {
-          catagory: catagory,
+          catagory:category,
         },
     
             include:{

@@ -8,10 +8,12 @@ import getProduct from '@/actions/getPoduct'
 import Nulldata from '@/components/Nulldata'
 import { SessionProvider } from 'next-auth/react'
 import CategorySection from '@/components/CategorySection'
+import getProductById from '@/actions/getProductById'
 
 
 export default async function Home({searchParams,params}) {
   const products =await getProduct(searchParams)
+
 
 { /* if(products.length===0){
     return <Nulldata title="No products found. Click *All* to clear filtr"/>

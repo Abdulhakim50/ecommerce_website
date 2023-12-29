@@ -149,7 +149,7 @@ const ProductDetails = ({ product,user,relatedProducts}) => {
     </div>
 
     {/* Right side with product details */}
-    <div className="flex flex-col gap-1 text-gray-700 text-sm"> {/* Adjusted text color to a neutral gray */}
+    <div className="flex flex-col gap-1 text-gray-700 text-sm border border-green-500 p-5 rounded-xl"> {/* Adjusted text color to a neutral gray */}
 
         <h2 className='text-2xl font-semibold'>{product.name}</h2> {/* Darkened text color for better contrast */}
         <div className='text-lg font-bold text-gray-800'>{formatPrice(product.price)}</div>

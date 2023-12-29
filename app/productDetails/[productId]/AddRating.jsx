@@ -97,7 +97,7 @@ const AddRating = ({product,user}) => {
     </div>
   
     {/* Submit Button */}
-    <Btn label={isLoading ? <span className="loading loading-spinner loading-md"></span> : 'Rate Product' } onClick={ handleSubmit(onSubmit)} />
+    <button className='w-[200px] bg-green-500 rounded-lg p-2 text-white' onClick={ handleSubmit(onSubmit)} >{isLoading ? <span className="loading loading-spinner loading-md"></span> : 'Rate Product' }</button>
      
   
   </div>

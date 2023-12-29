@@ -6,6 +6,8 @@ import Catagory from './Catagory'
 import { catagories } from '@/utils/Catagories'
 import { usePathname, useSearchParams } from 'next/navigation'
 
+import clsx from 'clsx';
+
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 const Catagories = () => {
@@ -29,8 +31,19 @@ const Catagories = () => {
     <div className='flex justify-evenly gap-0 '>
   
     <div className='flex gap-4 mt-5 '>
-    <div>Home</div>
-      <Link href='/search'>Products</Link>
+    <Link href='/'  className={clsx(
+              '  ',
+              {
+                'bg-white px-2 rounded-s-sm text-green-700 font-semibold': pathname === '/',
+              },
+            )}>Home</Link>
+      <Link href='/search'   className={clsx(
+              '  ',
+              {
+                'bg-sky-100 text-blue-600': pathname === '/search',
+              },
+            )}
+          >Products</Link>
       <div>Contact Us</div>
     </div>
       

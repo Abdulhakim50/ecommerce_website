@@ -14,7 +14,7 @@ const Newarrival = async({dynamicProducts}) => {
 
     
   return (
-<div className='mt-20 text-center font-bold text-lg'>
+<div className='mt-20 text-center font-bold text-2xl'>
      <p className='max-sm:bg-green-500 max-sm:mb-3 rad max-sm:mx-2'>New Arrivals</p>
      <div className=' grid max-sm:grid-cols-2  lg:grid-cols-6 md:grid-cols-3 mx-10 max-sm:mx-2 max-sm:gap-2 gap-4'  >
       

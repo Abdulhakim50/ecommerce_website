@@ -1,11 +1,12 @@
+
+
 import React from 'react'
 import { getProductByCategory } from "@/actions/getCetagory";
 import Image from 'next/image';
 
 
-const page = async (params) => {
-  const category = params.category;
-  const products = await getProductByCategory(category);
+const CategoryPage = async ({products}) => {
+
   
   return (
     <div className="container mx-auto my-8 ">
@@ -40,4 +41,4 @@ const page = async (params) => {
   )
 }
 
-export default page
+export default CategoryPage

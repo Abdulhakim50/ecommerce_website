@@ -12,6 +12,7 @@ import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce'
 import { useCart } from '@/hooks/useCart'
 import ShowWishListQty from './ShowWishListQty';
+import Image from 'next/image';
 
 
 
@@ -169,7 +170,8 @@ const Nav = ({currentUser}) => {
 
 
 
-      <div className='text-green-500 font-bold '>
+      <div className='text-green-500 font-bold flex  items-center '>
+        <Link href='/'><Image src='/Logo.png' width={100} height={100} className='text-green-500'/></Link>
         <Link href='/' className='text-3xl max-sm:text-xl'>ethiomarket<spn className='text-black font-medium opacity-40'>.com</spn></Link>
       </div> 
      
