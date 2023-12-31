@@ -2,11 +2,11 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer class="bg-gray-100 py-12 bord ">
+    <footer class="bg-gray-100 py-12 bord  mt-40">
      <div class="container mx-auto flex flex-wrap justify-around">
-         <div class="w-full mb-8">
-             <h4 class="text-lg font-bold mb-4 text-green-500">About Ashewa</h4>
-             <p class="text-gray-600 mb-4">We passionately believe in great bargains and excellent services for buyers and sellers. Most importantly, we firmly believe in high-quality products and exceptional customer services.</p>
+         <div class="w-full mb-8 items-center">
+             <h4 class="text-lg font-bold mb-4 text-green-500">About ethioMarket</h4>
+             <p class="text-gray-600 mb-4 max-w-[500px] ">We passionately believe in great bargains and excellent services for buyers and sellers. Most importantly, we firmly believe in high-quality products and exceptional customer services.</p>
          </div>
  
          <div class="w-full md:w-1/4 mb-8  ">

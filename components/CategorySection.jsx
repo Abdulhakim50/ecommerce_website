@@ -19,8 +19,6 @@ const CategorySection = () => {
     slidesToScroll: 1,
     autoplay: true,           // Enable autoplay
     autoplaySpeed: 3000,
-    centerMode: true,
-centerPadding: '10px',
     responsive: [
         {
           breakpoint: 1024, // Large screens
@@ -50,9 +48,8 @@ centerPadding: '10px',
   };
   return (
     <div>
-                <div className="container  my-8 col-span-2">
-                    <h1 className="text-3xl font-bold mb-6 max-sm:text-cen
-          ter">Popular categories</h1>
+                <div className=" mx-auto w-[85%]">
+                    <h1 className="text-3xl font-bold mb-6 text-center">Popular categories</h1>
 
                     <Slider
                         {...sliderSettings} >
@@ -60,7 +57,7 @@ centerPadding: '10px',
 
 
 
-                            return <div key={cat.id} className="grid-cols-6 relative group hover:shadow-md hover:scale-110 p-4  overflow-hidden">
+                            return <div key={cat.id} className=" group hover:shadow-md hover:scale-110 p-4  overflow-hidden">
                                 <Image
                                     src={cat.img} // Replace with the correct path to your image
                                     alt={cat.label}
@@ -70,7 +67,7 @@ centerPadding: '10px',
                                 />
                                
                                 <div className="text-center">
-                                    <p className="text-2xl font-semibold mb-2 text-[#333333] text-center">{cat.label}</p>
+                                    <p className="text-lg font-semibold mb-2 text-[#333333] text-[15.488px]">{cat.label}</p>
                                 </div>
 
                             </div>

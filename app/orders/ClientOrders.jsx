@@ -93,7 +93,9 @@ const ClientOrders = ({ orders }) => {
     return (
         <div className="p-8 bg-green-100">
         <div className="mb-6">
-            <p className="text-center text-3xl font-bold text-green-700">Manage Orders</p>
+        <p className="text-center text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-green-700">
+  Your Orders
+</p>
         </div>
         <div className="w-full h-96 mb-6 bg-green-200">
             <DataGrid

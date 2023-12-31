@@ -21,7 +21,7 @@ const LoginForm = ({currentUser}) => {
 
      useEffect(() => {
   if(currentUser){
-      router.push("/cart")
+      router.push("/")
       router.refresh()
     }
        
@@ -61,9 +61,9 @@ const LoginForm = ({currentUser}) => {
       }
     return (
         
-        <div class={`h-full flex mt-20 justify-center max-sm:mt-0 ${currentUser && 'hidden' }`}>
+        <div class={`h-full flex  my-20  justify-center max-sm:mt-0 ${currentUser && 'hidden' }`}>
 
-        <div class="bg-white p-8 rounded shadow-md max-w-md w-full">
+        <div class="bg-white p-8 rounded shadow-md max-w-md w-full  ">
         
             <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Sign In</h2>
         

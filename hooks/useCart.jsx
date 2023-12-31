@@ -158,7 +158,7 @@ export const CartContextProvider=(props)=>{
     const handleCartQtyDec=useCallback(
         (product) => {
       let updatedCart;
-      if(product.quantity > -1){
+      if(product.quantity <= 0){
           return toast.error("Oop! Minimum reached")
       }
       if(cartProducts){

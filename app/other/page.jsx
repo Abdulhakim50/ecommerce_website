@@ -65,62 +65,11 @@ function randomm (length){
 
   return (
  
-{/*<div>
-  <button className={enable ?'bg-red-500 p-3 rounded-lg text-white transition-transform': 'bg-green-500 p-3 rounded-lg text-white'} onClick={() => setEnabel(!enable)}>{enable ?'Disable Multiple Select'  : 'Enable Multiple Select' } </button>
-  {catagories.map((cat)=>(
-   <div className='flex flex-col'>
-      <div className='flex cursor-pointer' onClick={enable ? ()=>handlemultiple(cat.label) :()=>handleOnChange(cat.label)}>
-      <div>{cat.label}</div>
-      <div>+</div>
-      </div>
-    {enable  ?  multiple.indexOf(cat.label) !== -1 &&
-      ( <Image src={cat.img} width={200} height={200}  /> ): 
-      selected === cat.label &&   ( <Image src={cat.img} width={200} height={200}  /> )
-    }
 
-    </div>
-  ))}
-</div>
+   
 
-<div style={{
-  width:'100vw',
-  height:"100vh",
-  backgroundColor:color,
-  color:'white'
-
-}} className='flex gap-5 justify-center'>
-  <button onClick={type === 'hex' ? hexg : rgbg}>random generation</button>
-  <button onClick={()=> settype('hex')}> hex type</button>
-  <button onClick={()=>settype('rgb')}> rgb type</button>
-</div>
-  <div>
-    <h1>{type === 'hex' ? 'hex' : 'rgb'}</h1>
-    <h1>{color}</h1>
-  </div>
-
-
-  <div>
-    {
-  
-    [Array(noStars)].map((_,index)=>{
-      index+=1
-      return <div
-
-      className={index <= (hover || rating )? 'bg-green-700': 'bg-black'}
-      key={index}
-      onClick={()=>handle(index)}
-       onMouseMove={()=> handleM(index)}
-       onMouseLeave={()=> handleL()}
-       width={40}
-      >0</div>
-
-    })}
-  </div>
-   </>
+<div class="container mx-auto"> <div class="bg-gray-100 py-16 px-4"> <h2 class="text-3xl font-semibold mb-6">1 in 1 Convertible Sofa Bed</h2> <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> <div class="bg-white p-4 rounded"> <h3 class="text-xl font-semibold mb-2">Details</h3> <ul class="text-gray-600"> <li>Price: 14,999 EIB</li> <li>Brand: 2 in 1 Convertible Sofa Bed</li> </ul> </div> <div class="bg-white p-4 rounded"> <h3 class="text-xl font-semibold mb-2">Product Features</h3> <ul class="text-gray-600"> <li>Conversion between a sofa and a bed</li> <li>Wooden frame and cushions</li> <li>Size: 195x76 cm</li> </ul> </div> </div> </div> </div>
   )
-}*/}
-
-
-  )}
+}
 
 export default page

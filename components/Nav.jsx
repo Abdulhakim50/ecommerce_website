@@ -75,7 +75,7 @@ const Nav = ({currentUser}) => {
 
        
         <div class=" md:hidden mt-2 ">
-   <button class="text-black font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 text-3xl" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example"  >
+   <button class="text-black font-medium rounded-lg text-sm px-5 py-2.5 mb-2   text-3xl" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example"  >
    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 </svg>
@@ -156,7 +156,7 @@ const Nav = ({currentUser}) => {
         <div className=" items-center">
           <span className="text-white">{category.label}</span>
         </div>
-         <hr/>
+        
       </div>
      
     ))}

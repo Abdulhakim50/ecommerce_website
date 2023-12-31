@@ -18,7 +18,7 @@ const page = async () => {
   }
 
   return (
-    <div className='mt-20 mb-20 ml-10 mr-10'><ClientOrders  orders={orders}/></div>
+    <div className='mt-20 mb-20 ml-10 mr-10 max-sm:mr-3 max-sm:ml-4'><ClientOrders  orders={orders}/></div>
   )
 }
 

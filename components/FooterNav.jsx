@@ -14,7 +14,7 @@ const FooterNav = ({currentUser}) => {
   const pathname =usePathname()
   
   return (
-    <div className='fixed bottom-0  w-full bg-green-500 h-[60px] flex justify-evenly md:hidden  radd '>
+    <div className='fixed bottom-0  w-full bg-green-500 h-[60px] flex justify-evenly md:hidden  radd  '>
    
 
   <Link href='/'  className={clsx(

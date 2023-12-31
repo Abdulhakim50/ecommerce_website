@@ -8,7 +8,7 @@ const products = await getProductByCategory(category)
 
   return (
     <div>
-        <CategoryPage products={products} />
+        <CategoryPage products={products} category={category}/>
     </div>
   )
 }

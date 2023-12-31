@@ -15,21 +15,25 @@ const CartClient = ({currentUser}) => {
 
     if (!cartProducts || cartProducts.length === 0) {
         return (
-            <div className="flex flex-col items-center">
-                <div>
+            <div className="flex flex-col items-center justify-center my-[110px]">
+                <div className='text-green-500'>
                     your cart is empty
                 </div>
-                <div>
+                <div className='bg-green-500 p-3 '>
                     <Link href={"/"} className=' text-slate-500 flex items-center gap-1 mt-2'>
-                         back
-                        <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+</svg>
+
+                        <span  className='text-white font-bold text-lg'>
                             Start Shopping
                         </span>
                     </Link>
                 </div>
             </div>
         )
-    }
+    }  
+
   return (
 <div class="">
   <div class="container mx-auto p-8">

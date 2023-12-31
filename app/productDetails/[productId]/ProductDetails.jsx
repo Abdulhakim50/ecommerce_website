@@ -245,7 +245,7 @@ const ProductDetails = ({ product, user, relatedProducts }) => {
                                 </div>
                                 <div className="text-center">
                                     <p className="text-gray-600"> {relatedProduct.catagory}</p>
-                                    <h2 className="text-lg font-semibold mb-2 text-[#333333] text-[15.488px]">{relatedProduct.name}</h2>
+                                    <h2 className="text-lg font-semibold mb-2 text-[#333333] text-[15.488px] line-clamp-1 hover:line-clamp-3">{relatedProduct.name}</h2>
                                     <p className="text-gray-600 mb-2 text-green-500 ">${relatedProduct.price}</p>
                                     <p className="text-gray-600 opacity-40">(Reviews: {relatedProduct.reviews.length})</p>
                                 </div>

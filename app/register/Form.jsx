@@ -73,7 +73,7 @@ const Form = ({currentUser}) => {
            <span className="loading loading-dots loading-lg"></span> </> 
         }
         return (
-            <div class=" h-screen flex mt-20 justify-center max-sm:mt-0">
+            <div class="  flex my-20 justify-center max-sm:mt-0">
 
             <div class="bg-white p-8 rounded shadow-md max-w-md w-full">
             
