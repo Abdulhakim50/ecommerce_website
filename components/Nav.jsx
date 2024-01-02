@@ -75,7 +75,7 @@ const Nav = ({currentUser}) => {
 
        
         <div class=" md:hidden mt-2 ">
-   <button class="text-black font-medium rounded-lg text-sm px-5 py-2.5 mb-2   text-3xl" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example"  >
+   <button class="text-black font-medium rounded-lg text-md  py-2.5 mb-2   text-3xl" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example"  >
    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 </svg>
@@ -93,18 +93,18 @@ const Nav = ({currentUser}) => {
    </button>
    <div className='flex flex-col gap-5'>
    <div className="text-white text-center">
-  <p className="text-white text-center">Welcome {currentUser?.name}</p>
+  <p className="text-white text-center opacity-80">Welcome {currentUser?.name}</p>
 </div>
 
-<div className="flex items-center justify-center">
-  <input
-    type="text"
-    className="border border-white bg-[#333333] text-white px-5 py-2 rounded-l-lg focus:outline-none"
-    placeholder="What are you looking for?"
-    
-    onChange={(e) => handleInput(e.target.value)}
-    defaultValue={searchParams.get('query')?.toString()}
-  />
+<div className="flex items-center justify-center mx-auto">
+<input
+  type="text"
+  className="border border-white bg-[#333333] text-white px-3 py-2  rounded-l-lg focus:outline-none w-full md:max-w-[80%]"
+  placeholder="What are you looking for?"
+  onChange={(e) => handleInput(e.target.value)}
+  defaultValue={searchParams.get('query')?.toString()}
+/>
+
   <button
     className="bg-green-600 px-4 py-2 text-white rounded-r-lg hover:bg-green-500 focus:outline-none"
     onClick={handleSearch}
@@ -134,12 +134,12 @@ const Nav = ({currentUser}) => {
      <div>
       
      <div className='flex gap-10 justify-center text-white'>
-  <Link href='/login' data-drawer-hide="drawer-example" className='action-link  bg-[#2b2727] p-3 rounded-sm'>SignIn</Link>
-  <Link href='/register' data-drawer-hide="drawer-example" className='action-link  bg-[#2b2727] p-3 rounded-sm'>SignUp</Link>
+  <Link href='/login' data-drawer-hide="drawer-example" className='action-link  bg-[#2b2727] p-3 rounded-sm opacity-80'>SignIn</Link>
+  <Link href='/register' data-drawer-hide="drawer-example" className='action-link  bg-[#2b2727] p-3 rounded-sm opacity-80'>SignUp</Link>
 </div>
 </div>
 <div>
-  <p className='text-white text-center mt-5 text-lg'>CATEGORIES</p>
+  <p className='text-white text-center mt-5 text-lg opacity-80'>CATEGORIES</p>
   <div className='categories-container gap-0'>
     {catagories.map((category) => (
       <div
@@ -151,7 +151,7 @@ const Nav = ({currentUser}) => {
         key={category.label}
         value={category.label}
         aria-hidden="true"
-        className='category-item  p-4 rounded-md text-white hover:shadow-md'
+        className='category-item  p-1 rounded-md text-white hover:shadow-md opacity-50'
       >
         <div className=" items-center">
           <span className="text-white">{category.label}</span>
@@ -170,9 +170,13 @@ const Nav = ({currentUser}) => {
 
 
 
-      <div className='text-green-500 font-bold flex  items-center '>
-        <Link href='/'><Image src='/Logo.png' width={100} height={100} className='text-green-500'/></Link>
-        <Link href='/' className='text-3xl max-sm:text-xl'>ethiomarket<spn className='text-black font-medium opacity-40'>.com</spn></Link>
+      <div className='text-green-500 font-bold flex  items-center  '>
+      <Link href='/'>
+  <div className='logo-container'>
+    <Image src='/Logo.png' width={100} height={100} className='logo-image' />
+  </div>
+</Link>
+        <Link href='/' className='text-3xl max-sm:text-xl max-[345px]:mr-5'>ethiomarket<spn className='text-black font-medium opacity-40'>.com</spn></Link>
       </div> 
      
       <div className='flex border border-green-500  max-lg:border-none'>

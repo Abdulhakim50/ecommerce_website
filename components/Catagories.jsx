@@ -10,6 +10,12 @@ import clsx from 'clsx';
 
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { heroSlider } from '@/utils/heroSlider'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+
 const Catagories = () => {
   const params=useSearchParams()
   const catagory=params?.get('catagory')
@@ -19,6 +25,18 @@ const Catagories = () => {
   const isMainPage =pathname ==='/'
 
   if(!isMainPage) return null;
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,           // Enable autoplay
+    autoplaySpeed: 4000,
+    
+  };
+
   return (
     <>
    
@@ -78,16 +96,21 @@ const Catagories = () => {
       </div>
       </div>
 
-      <div className='flex flex-col gap-10 mt-10 ' >
+      <div className='flex flex-col gap-10 mt-10 items-center ' >
         <div>
-       <p className=' text-lg font-bold'>UP TO 50% OFF</p>
-        <p className=' text-5xl font-bold  text-green-700'>Shirt For Man</p>
+        <p className=' text-5xl font-bold  text-green-700'>
+Discover the Art of Elegance</p>
         
         </div>
-        <p className='  line'>Maboriosam in a nesciung eget magnae
-dapibus disting tloctio in the find it pereri
-odiy maboriosm.</p>
-       <button>Shop Now</button>
+     <div className='max-w-[600px] '>
+      <Slider {...sliderSettings}>
+        {heroSlider.map((hero)=>(
+            <p className='max-w-[600px]  line text-green-900 bg-white p-5 text-2xl  rounded-lg text-center'>{hero.label}</p>
+        ))}
+        </Slider>
+         </div>
+       <button  className='bg-green-500 text-white p-3 hover:bg-green-900 '>Shop Now</button>
+    
       </div>
      </div>
       
