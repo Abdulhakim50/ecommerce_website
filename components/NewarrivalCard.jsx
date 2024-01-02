@@ -34,9 +34,9 @@ const NewarrivalCard = ({data}) => {
       </div>
 
       <div className="p-4 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity">
-        <button className="bg-green-500 text-white py-1 px-4 "  >
+       {/* <button className="bg-green-500 text-white py-1 px-4 "  >
          Add To Cart
-        </button>
+  </button> */}
       </div>
        <div><Rating value={productRating} readOnly/></div>
 </div>

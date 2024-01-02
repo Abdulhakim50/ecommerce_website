@@ -51,7 +51,7 @@ const ManageClientOrders = ({ orders }) => {
             renderCell: (params) => {
                 return (
                     <div className="font-bold">
-                        {params.row.paymentStatus === 'pending' ? (<Status text="pending" />) : params.row.paymentStatus === 'complate' ? (<Status text="completed" />) : ''}
+                        {params.row.paymentStatus === 'pending' ? (<Status text="pending" />) : params.row.paymentStatus === 'complete' ? (<Status text="completed" />) : ''}
                     </div>
                 )
             }

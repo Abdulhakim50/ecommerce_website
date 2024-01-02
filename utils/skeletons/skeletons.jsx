@@ -2,8 +2,8 @@
 
 export function PcardSkeleton(){
     return  (
-        <div className=" bg-gray-400 rounded-lg  overflow-hidden "  >
+        <div className="skeleton w-32 h-32"></div>
      
-</div>
+
     )
 }

@@ -1,20 +1,21 @@
 
-
+'use client'
 import React from 'react'
 import { getProductByCategory } from "@/actions/getCetagory";
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 
-const CategoryPage = async ({products,category}) => {
-
+const CategoryPage = ({products,category}) => {
+  const router = useRouter()
   
   return (
     <div className="container mx-auto my-8 ">
     <h1 className="text-3xl font-bold mb-6 text-green-500">Category {category}</h1>
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto" >
       {Array.isArray(products) && products.length > 0 ? (
         products.map((product) => (
-          <div key={product.id} className="relative group bg-white p-4 rounded-md shadow-md overflow-hidden">
+          <div key={product.id} className="relative group bg-white p-4 rounded-md shadow-md overflow-hidden"   onClick={()=>router.push(`/productDetails/${product.id}`)}>
             <Image
                  src={product.images[0].image} // Replace with the correct path to your image
               alt={product.name}

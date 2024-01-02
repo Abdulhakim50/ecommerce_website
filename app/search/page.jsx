@@ -29,7 +29,7 @@ const totalPages = await fetchSearchPages(query,filterMax,filterMin)
 
   </div>
  <div>
-<SearchPage products={products} totalPages={totalPages}/>
+<SearchPage products={products} totalPages={totalPages} query={query}/>
  </div>
    
   </>
