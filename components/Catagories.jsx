@@ -105,7 +105,7 @@ Discover the Art of Elegance</p>
      <div className='max-w-[600px] '>
       <Slider {...sliderSettings}>
         {heroSlider.map((hero)=>(
-            <p className='max-w-[600px]  line text-green-900 bg-white p-5 text-2xl  rounded-lg text-center'>{hero.label}</p>
+            <p key={hero.label} className='max-w-[600px]  line text-green-900 bg-white p-5 text-2xl  rounded-lg text-center'>{hero.label}</p>
         ))}
         </Slider>
          </div>
