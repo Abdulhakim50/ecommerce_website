@@ -63,7 +63,9 @@ const Nav = ({currentUser}) => {
 
 
   
-  
+   const handleCategoryChange = (event) => {
+    router.push(`/categoryPage?category=${event}`);
+  };
 
   return (
     <>
@@ -76,7 +78,7 @@ const Nav = ({currentUser}) => {
        
         <div class=" md:hidden mt-2 ">
    <button class="text-black font-medium rounded-lg text-md  py-2.5 mb-2   text-3xl" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example"  >
-   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-900 font-">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 </svg>
    </button>
@@ -173,7 +175,7 @@ const Nav = ({currentUser}) => {
       <div className='text-green-500 font-bold flex  items-center  '>
       <Link href='/'>
   <div className='logo-container'>
-    <Image src='/Logo.png' width={100} height={100} className='logo-image' />
+    <Image src='/Logo.png' width={100} height={100} className='logo-image max-sm:w-20' />
   </div>
 </Link>
         <Link href='/' className='text-3xl max-sm:text-xl max-[345px]:mr-5'>ethiomarket<spn className='text-black font-medium opacity-40'>.com</spn></Link>
@@ -181,11 +183,11 @@ const Nav = ({currentUser}) => {
      
       <div className='flex border border-green-500  max-lg:border-none'>
         <div className='max-md:hidden'>
-       <select className=' border-none h-[60px] w-[200px] px-10 text-green-500 '   
-    
+       <select className=' border-none h-[60px] w-[200px] px-10 text-green-500 focus:outline-none '   
+        onChange={(e)=>handleCategoryChange(e.target.value)}
         >
           {catagories.map((category)=>(
-              <option onClick={()=>router.push(`categoryPage/${category.label.toLowerCase()}`)} key={category.label} value={category.label} className='text-green-500 '>{category.label}</option>
+              <option  key={category.label} value={category.label} className='text-green-500  '>{category.label}</option>
           ))}
       
       
@@ -196,8 +198,8 @@ const Nav = ({currentUser}) => {
        
         <div className='flex  max-lg:relative'>
          <input type="text" placeholder='what are you looking for?'
-           className={` text-black border-l-0  ml-1 px-20  
-           ${open? 'max-lg:absolute max-lg:top-[60px] max-lg:left-[-220px] max-lg:w-[500px] max-sm:w-[400px] max-sm:w-[400px] max-sm:left-[-150px] max-lg:border max-lg:border-green-500 max-lg:px-[10px] max-lg:py-[10px] max-lg:rounded-full transform translate-y-4 translate-y-0 transition duration-500 ease-in-out ':'max-lg:hidden'} `}    onChange={(e) => {
+           className={` text-black   ml-1 px-20  lg:border-none focus:outline-none
+           ${open? 'max-lg:absolute max-lg:top-[60px] max-lg:left-[-220px] max-lg:w-[500px] max-sm:w-[400px] max-sm:w-[400px] max-sm:left-[-150px] lg:border-none max-lg:border-green-500 max-lg:px-[10px] max-lg:py-[10px] max-lg:rounded-full transform translate-y-4 translate-y-0 transition duration-500 ease-in-out ':'max-lg:hidden'} `}    onChange={(e) => {
             handleInput(e.target.value);
           }}    defaultValue={searchParams.get('query')?.toString()}/>
 
@@ -265,14 +267,14 @@ const Nav = ({currentUser}) => {
     <input
       type="text"
       placeholder="Search products..."
-      className="py-2 px-4 w-[80%] border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 "
+      className="py-2 px-4 w-[90%] h-8 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 "
       onChange={(e) => {
         handleInput(e.target.value);
       }}    defaultValue={searchParams.get('query')?.toString()}
 
     />
    
-       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"       className="absolute right-0 top-0 h-full px-4 bg-green-500 text-white rounded-r-md flex items-center justify-center hover:bg-blue-600 focus:outline-none"
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"       className="absolute right-0 top-0 h-full px-2 bg-green-500 text-white rounded-r-md flex items-center justify-center hover:bg-blue-600 focus:outline-none"
  onClick={handleSearch}>
   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 </svg>

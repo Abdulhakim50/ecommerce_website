@@ -1,58 +1,53 @@
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
   return (
-    <footer class="bg-gray-100 py-12 bord  mt-40">
-     <div class="container mx-auto flex flex-wrap justify-around">
-         <div class="w-full mb-8 items-center">
-             <h4 class="text-lg font-bold mb-4 text-green-500">About ethioMarket</h4>
-             <p class="text-gray-600 mb-4 max-w-[500px] ">We passionately believe in great bargains and excellent services for buyers and sellers. Most importantly, we firmly believe in high-quality products and exceptional customer services.</p>
-         </div>
- 
-         <div class="w-full md:w-1/4 mb-8  ">
-             <h4 class="text-lg font-bold mb-4 text-green-500">Useful Links</h4>
-             <ul class="list-none">
-                 <li><a href="#about" class="text-gray-600 hover:text-blue-500">About Ashewa</a></li>
-                 <li><a href="#faq" class="text-gray-600 hover:text-blue-500">FAQ</a></li>
-                 <li><a href="#contact" class="text-gray-600 hover:text-blue-500">Contact Us</a></li>
-                 <li><a href="#app" class="text-gray-600 hover:text-blue-500">Mobile App</a></li>
-                 <li><a href="#marketplace" class="text-gray-600 hover:text-blue-500">Explore Our Marketplace</a></li>
-             </ul>
-         </div>
- 
-         <div class="w-full md:w-1/4 mb-8 text-green-500">
-             <h4 class="text-lg font-bold mb-4">Join Our Community</h4>
-             <ul class="list-none">
-                 <li><a href="#categories" class="text-gray-600 hover:text-blue-500">Browse Categories</a></li>
-                 <li><a href="#community" class="text-gray-600 hover:text-blue-500">Join Our Community</a></li>
-                 <li><a href="#sell" class="text-gray-600 hover:text-blue-500">Sell on our Marketplace</a></li>
-             </ul>
-         </div>
- 
-         <div class="w-full md:w-1/4 mb-8 text-green-500">
-             <h4 class="text-lg font-bold mb-4">Customer Service</h4>
-             <ul class="list-none">
-                 <li><a href="#payment" class="text-gray-600 hover:text-blue-500">Payment Methods</a></li>
-                 <li><a href="#shipping" class="text-gray-600 hover:text-blue-500">Shipping</a></li>
-                 <li><a href="#terms" class="text-gray-600 hover:text-blue-500">Terms and Conditions</a></li>
-                 <li><a href="#privacy" class="text-gray-600 hover:text-blue-500">Privacy Policy</a></li>
-             </ul>
-         </div>
- 
-         <div class="w-full md:w-1/4 mb-8 text-green-500">
-             <h4 class="text-lg font-bold mb-4">Smart Services</h4>
-             <ul class="list-none">
-                 <li><a href="#solutions" class="text-gray-600 hover:text-blue-500">Smart Solutions</a></li>
-                 <li><a href="#site-builder" class="text-gray-600 hover:text-blue-500">Smart Site Builder</a></li>
-                 <li><a href="#erp" class="text-gray-600 hover:text-blue-500">Smart ERP System</a></li>
-                 <li><a href="#school" class="text-gray-600 hover:text-blue-500">Smart School Management</a></li>
-                 <li><a href="#partner" class="text-gray-600 hover:text-blue-500">Ashewa Partner</a></li>
-             </ul>
-         </div>
-     </div>
- </footer>
- 
+    <footer className="bg-gray-800 text-white py-12">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="mb-8 lg:col-span-2">
+          <h4 className="text-3xl font-bold mb-4">ethioMarket.com</h4>
+          <p className="text-gray-400 max-w-md">
+            EthioMarket.com, the best marketplace to buy and sell products and services among our customers. We passionately believe in great bargains and excellent services for buyers and sellers. Most importantly, we firmly believe in high-quality products and exceptional customer services.
+          </p>
+        </div>
+
+        <div className="mb-8 max-sm:text-center">
+          <h4 className="text-lg font-bold mb-4 ">Useful Links</h4>
+          <ul className="list-none">
+            <li><a href="#about" className="text-gray-400 hover:text-blue-500">Home</a></li>
+            <li><a href="#faq" className="text-gray-400 hover:text-blue-500">Cart</a></li>
+            <li><a href="#contact" className="text-gray-400 hover:text-blue-500">Orders</a></li>
+            <li><a href="#app" className="text-gray-400 hover:text-blue-500">LogIn</a></li>
+            <li><a href="#marketplace" className="text-gray-400 hover:text-blue-500">SignUp</a></li>
+          </ul>
+        </div>
+
+        <div className="mb-8 max-sm:text-center">
+          <h4 className="text-lg font-bold mb-4">Contact US</h4>
+          <ul className="list-none">
+            <li><a href="#payment" className="text-gray-400 hover:text-blue-500">ethioMarket@qinash.com</a></li>
+            <li><a href="#shipping" className="text-gray-400 hover:text-blue-500">+251 903 295 555</a></li>
+            <li><a href="#terms" className="text-gray-400 hover:text-blue-500">Cape Verde St, The Place 3rd Floor</a></li>
+          </ul>
+        </div>
+
+        <div className="mb-8 max-sm:text-center">
+          <h4 className="text-lg font-bold mb-4">Social media</h4>
+          <ul className="list-none">
+            <li><a href="#solutions" className="text-gray-400 hover:text-blue-500">Facebook</a></li>
+            <li><a href="#site-builder" className="text-gray-400 hover:text-blue-500">Instagram</a></li>
+            <li><a href="#erp" className="text-gray-400 hover:text-blue-500">Telegram</a></li>
+            <li><a href="#school" className="text-gray-400 hover:text-blue-500">Twitter</a></li>
+            <li><a href="#partner" className="text-gray-400 hover:text-blue-500">Ashewa</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="text-center mt-8">
+        <strong className="text-gray-400">Copyright © 2023 ethiomarket.com. All rights reserved.</strong>
+      </div>
+    </footer>
   );
 };
 
-export default Footer
+export default Footer;

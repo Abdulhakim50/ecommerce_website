@@ -27,9 +27,7 @@ const  CheckoutClient =  () => {
 
     const router = useRouter();
   
-   
-   console.log(paymentIntent)
-   console.log(clientSecret)
+
 
 
     useEffect(() => {
@@ -99,7 +97,10 @@ const  CheckoutClient =  () => {
                     <CheckoutForm clientSecret={clientSecret} handleSetPaymentSuccess={handleSetPaymentSuccess} />
                 </Elements>
             )}
-            {loading && <div>Loading Checkout</div>}
+            {loading && <div className='text-center justify-center '><span className="loading loading-dots loading-xs"></span>
+<span className="loading loading-dots loading-sm"></span>
+<span className="loading loading-dots loading-md"></span>
+<span className="loading loading-dots loading-lg"></span></div>}
             {error && (
                 <div>someting want wrong</div>
             )}
@@ -108,12 +109,18 @@ const  CheckoutClient =  () => {
 
             {paymentSuccess && (
 
-                <div>
-                    <div>payment success</div>
-                    <div>
+                <div className='flex flex-col items-center  my-10 gap-3'>
+                    <div className='flex gap-2 items-center'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 bg-green-500 text-white font-bold">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+</svg>
+
+                    <div className='text-green-600'>Payment Success</div>
+                    </div>
+                    <div className='bg-green-500 text-white p-3'>
                         <button
                             onClick={() => router.push("/orders")}
-                        >view Your Orders</button>
+                        >View Your Orders</button>
                     </div>
                 </div>
             )}

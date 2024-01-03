@@ -34,7 +34,7 @@ const SearchPage = ({products,totalPages,query}) => {
     </div>
     <div className="container  my-8 col-span-2">
       <h1 className="text-3xl font-bold mb-6 max-sm:text-cen
-      ter">{query ?  `Search results for '${query}'` : 'Search results for'}</h1>
+      ter">{query ?  `Search results for '${query}'` : 'Search results'}</h1>
       <div className="grid max-sm:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  items-center">
  
        { products.map((product) => (

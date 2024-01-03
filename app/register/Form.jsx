@@ -23,10 +23,11 @@ const Form = ({currentUser}) => {
             name: "",
             email: "",
             password: "",
-            confirmPassword: ''
+          
         }
     })
     const router = useRouter();
+
 
     useEffect(() => {
         if(currentUser){
@@ -90,17 +91,14 @@ const Form = ({currentUser}) => {
             
             
                 <div class="mb-6">
-                    <label htmlFor="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                    <label htmlFor="password"  name="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
                     <Input id="password"  label='password'  disabled={loading} register={register} errors={errors} required type="password" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="**********"/>
                 </div>
-                <div class="mb-6">
-                    <label htmlFor="confirmPassword" class="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
-                    <Input id="confirmPassword"  label='Confirm Password'  disabled={loading} register={register} errors={errors} required type="password" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="**********"/>
-                </div>
+               
               
                
     <button class="bg-blue-500 text-white rounded-full px-4 py-2 w-full hover:bg-blue-600"   onClick={handleSubmit(onSubmit)}>
-    {loading ? "Loading" : "Sign Up"}
+    {loading ? "Loading" : "Sign In"}
     </button>
             
                 

@@ -48,7 +48,7 @@ const Catagories = () => {
     <div className='w-full bg-green-500 h-[60px] mt-5 max-sm:hidden  '>
     <div className='flex justify-evenly gap-0 '>
   
-    <div className='flex gap-4 mt-5 '>
+    <div className='flex gap-10 mt-5 '>
     <Link href='/'  className={clsx(
               '  ',
               {
@@ -56,13 +56,13 @@ const Catagories = () => {
               },
             )}>Home</Link>
       <Link href='/search'   className={clsx(
-              '  ',
+              ' text-white font-semibold ',
               {
                 'bg-sky-100 text-blue-600': pathname === '/search',
               },
             )}
           >Products</Link>
-      <div>Contact Us</div>
+      <Link href='/categoryList' className='text-white font-semibold'>Categories</Link>
     </div>
       
     </div>
