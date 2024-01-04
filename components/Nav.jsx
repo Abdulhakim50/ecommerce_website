@@ -136,12 +136,12 @@ const Nav = ({currentUser}) => {
      <div>
       
      <div className='flex gap-10 justify-center text-white'>
-  <Link href='/login' data-drawer-hide="drawer-example" className='action-link  bg-[#2b2727] p-3 rounded-sm opacity-80'>SignIn</Link>
-  <Link href='/register' data-drawer-hide="drawer-example" className='action-link  bg-[#2b2727] p-3 rounded-sm opacity-80'>SignUp</Link>
+  <Link href='/login' data-drawer-hide="drawer-example" className='action-link  bg-green-600 p-2 rounded-sm opacity-80'>SignIn</Link>
+  <Link href='/register' data-drawer-hide="drawer-example" className='action-link  bg-green-600 p-2 rounded-sm opacity-80'>SignUp</Link>
 </div>
 </div>
 <div>
-  <p className='text-white text-center mt-5 text-lg opacity-80'>CATEGORIES</p>
+  <p className='text-green-500 text-center mt-5 text-lg opacity-80'>CATEGORIES</p>
   <div className='categories-container gap-0'>
     {catagories.map((category) => (
       <div
