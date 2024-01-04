@@ -13,6 +13,15 @@ const Footer = () => {
         </div>
 
         <div className="mb-8 max-sm:text-center">
+          <h4 className="text-lg font-bold mb-4">Contact US</h4>
+          <ul className="list-none">
+            <li><Link href="#payment" className="text-gray-400 hover:text-blue-500">ethioMarket@gmail.com</Link></li>
+            <li><Link href="#shipping" className="text-gray-400 hover:text-blue-500">+251 903 295 555</Link></li>
+            <li><Link href="#terms" className="text-gray-400 hover:text-blue-500">Cape Verde St, The Place 3rd Floor</Link></li>
+          </ul>
+        </div>
+
+        <div className="mb-8 max-sm:text-center">
           <h4 className="text-lg font-bold mb-4 ">Useful Links</h4>
           <ul className="list-none">
             <li><Link href="/" className="text-gray-400 hover:text-blue-500">Home</Link></li>
@@ -23,14 +32,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="mb-8 max-sm:text-center">
-          <h4 className="text-lg font-bold mb-4">Contact US</h4>
-          <ul className="list-none">
-            <li><Link href="#payment" className="text-gray-400 hover:text-blue-500">ethioMarket@qinash.com</Link></li>
-            <li><Link href="#shipping" className="text-gray-400 hover:text-blue-500">+251 903 295 555</Link></li>
-            <li><Link href="#terms" className="text-gray-400 hover:text-blue-500">Cape Verde St, The Place 3rd Floor</Link></li>
-          </ul>
-        </div>
+      
 
         <div className="mb-8 max-sm:text-center">
           <h4 className="text-lg font-bold mb-4">Social media</h4>
