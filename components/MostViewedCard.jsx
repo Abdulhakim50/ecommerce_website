@@ -6,6 +6,7 @@ import Image from 'next/image';
 import formatPrice from '@/utils/formatPrice';
 import { useRouter } from 'next/navigation';
 import truncateDesc from '@/utils/trunctedDesc';
+import { NcardSkeleton } from '@/utils/skeletons/skeletons';
 
 const NewarrivalCard = ({data}) => {
 
@@ -17,7 +18,7 @@ const NewarrivalCard = ({data}) => {
 
   return (
     <>
-
+  
      <div className="group bg-white rounded-lg shadow-md overflow-hidden    " onClick={()=>router.push(`/productDetails/${data.id}`)} >
       <Image src={data.images[0].image} alt="Shoes" width={200} height={40}  className="w-full h-40 max-sm:h-32 object-cover" />
 
@@ -34,6 +35,7 @@ const NewarrivalCard = ({data}) => {
       </div>
        <div><Rating value={productRating} readOnly/></div>
 </div>
+
 </>
   )
 }

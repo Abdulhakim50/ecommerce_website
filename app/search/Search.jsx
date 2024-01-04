@@ -5,7 +5,7 @@ import FilterInput from "@/components/FilterInput";
 import FilterCategory from "@/components/FilterCategory";
 import Pagination from "./Pagination";
 import Link from "next/link";
-import ProductSkeleton from "@/components/ProductSkeleton";
+import { PcardSkeleton } from "@/utils/skeletons/skeletons";
 import { Suspense } from "react";
 
 
@@ -36,6 +36,7 @@ const SearchPage = ({products,totalPages,query}) => {
       <FilterCategory />
     </div>
     <div className="container  my-8 col-span-2">
+
       <h1 className="text-3xl font-bold mb-6 max-sm:text-cen
       ter">{query ?  `Search results for '${query}'` : 'Search results'}</h1>
       <div className="grid max-sm:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  items-center">
@@ -43,7 +44,7 @@ const SearchPage = ({products,totalPages,query}) => {
        {
        products.length === 0 ?  <div className="">No Products found</div>  :   
        products.map((product) => (
-        <Suspense fallback={<ProductSkeleton />} key={product.id}>
+        <Suspense fallback={<PcardSkeleton />} key={product.id}>
           <Link key={product.id} className="relative group hover:shadow-md hover:scale-110 p-4  overflow-hidden"   href={`/productDetails/${product.id}`}>
             <Image
                  src={product.images[0].image} // Replace with the correct path to your image

@@ -8,6 +8,8 @@ import Button from '@/components/Btn'
 import ItemContent from './itemContent'
 import formatPrice from '@/utils/formatPrice'
 import { useRouter } from 'next/navigation'
+import { Suspense } from 'react'
+import { CSkeleton } from '@/utils/skeletons/skeletons'
 
 const CartClient = ({currentUser}) => {
     const { cartProducts, handleClearCart, cartTotal } = useCart()
@@ -41,7 +43,7 @@ const CartClient = ({currentUser}) => {
     }  
 
   return (
-<div class="">
+   
   <div class="container mx-auto p-8">
     <h1 class="text-3xl font-bold mb-8 text-green-600 text-center">Your Shopping Cart</h1>
 
@@ -58,7 +60,7 @@ const CartClient = ({currentUser}) => {
         </thead>
         
                 {cartProducts && cartProducts.map((item) => {
-                    return <ItemContent key={item.id}  item={item} />
+                    return <Suspense fallback={<CSkeleton/>}><ItemContent key={item.id}  item={item} /></Suspense> 
                 })}
             
       </table>
@@ -85,22 +87,12 @@ const CartClient = ({currentUser}) => {
         </Link>
     </div>
   </div>
-</div>
-
-
-    
-
-
-    
-    
 
 
 
-    
 
 
- 
-
+  
   )
 }
 

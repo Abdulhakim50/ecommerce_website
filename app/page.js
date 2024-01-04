@@ -13,6 +13,7 @@ import getProductById from '@/actions/getProductById'
 
 export default async function Home({searchParams,params}) {
   const products =await getProduct(searchParams)
+  const mostViewed =await getProduct(searchParams)
 
 
 { /* if(products.length===0){
@@ -34,7 +35,7 @@ export default async function Home({searchParams,params}) {
     <div className="flex flex-col gap-32 ">
     <Newarrival dynamicProducts={dynamicProducts}/>
      <CategorySection/>
-     <MostViewed dynamicProducts={dynamicProducts}/>
+     <MostViewed mostViewed={mostViewed}/>
 
      </div>
     

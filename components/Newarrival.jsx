@@ -3,6 +3,7 @@ import NewarrivalCard from './NewarrivalCard';
 import Image from 'next/image';
 import Nulldata from './Nulldata';
 import getProductById from '@/actions/getProductById';
+import { NcardSkeleton, PcardSkeleton } from '@/utils/skeletons/skeletons';
 
 
 const Newarrival = async({dynamicProducts}) => {
@@ -20,7 +21,7 @@ const Newarrival = async({dynamicProducts}) => {
       
     {dynamicProducts.map((item)=>{ 
 
-        return <NewarrivalCard data={item} key={item.id} /> 
+        return   <Suspense fallback={<NcardSkeleton />}><NewarrivalCard data={item} key={item.id} /> </Suspense> 
 
    
 

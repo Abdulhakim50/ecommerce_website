@@ -2,7 +2,7 @@
 import prisma from "@/libs/prisma"
 
 
-export default async function getProduct(params){
+export default async function getMostViewed(params){
     try {
         const {catagory,searchTerm}=params
         let searchString =searchTerm
@@ -64,7 +64,7 @@ export default async function getProduct(params){
                             user:true
                         },
                         orderBy:{
-                            createdDate:'desc'
+                            rating:'desc'
                         }
                     }
                 }

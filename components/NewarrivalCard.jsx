@@ -9,7 +9,7 @@ import truncateDesc from '@/utils/trunctedDesc';
 import { useCart } from '@/hooks/useCart';
 import Btn from './Btn';
 import { Suspense, useEffect } from 'react';
-import { PcardSkeleton } from '@/utils/skeletons/skeletons';
+
 
 const NewarrivalCard = ({data}) => {
 
@@ -23,7 +23,7 @@ const NewarrivalCard = ({data}) => {
 
   return (
     <>
-    <Suspense fallback={<PcardSkeleton/>}>
+   
      <div className="group bg-white rounded-lg shadow-md overflow-hidden    " onClick={()=>router.push(`/productDetails/${data.id}`)} >
       <Image src={data.images[0].image} alt="Shoes" width={200} height={40}  className="w-full h-40 max-sm:h-32 object-cover" />
 
@@ -40,7 +40,7 @@ const NewarrivalCard = ({data}) => {
       </div>
        <div><Rating value={productRating} readOnly/></div>
 </div>
-</Suspense>
+
 </>
   )
 }
