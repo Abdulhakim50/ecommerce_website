@@ -60,7 +60,7 @@ const CartClient = ({currentUser}) => {
         </thead>
         
                 {cartProducts && cartProducts.map((item) => {
-                    return <Suspense fallback={<CSkeleton/>}><ItemContent key={item.id}  item={item} /></Suspense> 
+                    return <Suspense key={item.id}  fallback={<CSkeleton/>}><ItemContent  item={item} /></Suspense> 
                 })}
             
       </table>

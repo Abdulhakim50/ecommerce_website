@@ -20,7 +20,7 @@ const Newarrival = ({mostViewed}) => {
       
     {mostViewed.map((item)=>{ 
 
-        return  <Suspense fallback={<NcardSkeleton />}> <NewarrivalCard data={item} key={item.id} /> </Suspense>
+        return  <Suspense key={item.id}  fallback={<NcardSkeleton />}> <NewarrivalCard data={item} /> </Suspense>
 
    
 
