@@ -10,12 +10,12 @@ import {useState,useEffect} from "react";
 
 
 const CheckoutForm = ({clientSecret,handleSetPaymentSuccess}) => {
-    const{cartTotalAmount,handleClearCart, handleSetPaymentIntent}=useCart();
+    const{cartTotal,handleClearCart, handleSetPaymentIntent}=useCart();
     const elements =useElements();
     const stripe=useStripe()
     const [isLoading,setisLoading]=useState(false)
 
-    const formatedPrice =formatPrice(cartTotalAmount)
+    const formatedPrice =formatPrice(cartTotal)
 
 
 
@@ -73,7 +73,7 @@ const CheckoutForm = ({clientSecret,handleSetPaymentSuccess}) => {
       </div>
     </div>
   
-    <div className="py-4 text-center text-gray-700 text-2xl font-bold">
+    <div className="py-4 text-center text-gray-700 text-2xl font-bold text-green-500">
       Total: {formatedPrice}
     </div>
     <button className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">
