@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import Image from 'next/image';
 const HeroSlider = () => {
-  const images = ['/hero3.webp','f.jpg','/ff.jpg']; // replace with your image paths
+  const images = ['f.jpg','/ff.jpg']; // replace with your image paths
 
   return (
     <div className="relative w-full max-w-[1300px] h-full mx-auto my-10">

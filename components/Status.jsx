@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Status = ({text,icon}) => {
+const Status = ({text,icon,className}) => {
   return (
     <>
-    <div>{text}</div>
+    <div className={className}>{text}</div>
     <div>{icon}</div>
     
 </>

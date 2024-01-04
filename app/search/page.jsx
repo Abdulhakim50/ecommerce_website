@@ -16,13 +16,11 @@ const Search = async ({searchParams}) => {
 
  
 const products =await getSearchResults(query,currentPage,filterMax,filterMin,filterCat)
-const totalPages = await fetchSearchPages(query,filterMax,filterMin)
+const totalPages = await fetchSearchPages(query,filterMax,filterMin,filterCat)
  
 
 
- if(!products){
-  return <p>No products found </p>
- }
+
   return (<>
   <div>
 

@@ -17,7 +17,10 @@ const SearchPage = ({products,totalPages,query}) => {
 
 
 
-
+  if(!products  ){
+    return <p>No products found </p>
+   }
+  
 
   return (
     <div className="grid grid-cols-3 items-start mx-3 max-sm:grid-cols-1">
@@ -37,7 +40,9 @@ const SearchPage = ({products,totalPages,query}) => {
       ter">{query ?  `Search results for '${query}'` : 'Search results'}</h1>
       <div className="grid max-sm:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  items-center">
  
-       { products.map((product) => (
+       {
+       products.length === 0 ?  <div className="">No Products found</div>  :   
+       products.map((product) => (
         <Suspense fallback={<ProductSkeleton />} key={product.id}>
           <Link key={product.id} className="relative group hover:shadow-md hover:scale-110 p-4  overflow-hidden"   href={`/productDetails/${product.id}`}>
             <Image

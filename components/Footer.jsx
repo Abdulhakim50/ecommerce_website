@@ -1,12 +1,13 @@
 import React from 'react';
+import Link  from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-12">
+    <footer className="bg-gray-800 text-white py-12 md:mt-60">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
         <div className="mb-8 lg:col-span-2">
           <h4 className="text-3xl font-bold mb-4">ethioMarket.com</h4>
-          <p className="text-gray-400 max-w-md">
+          <p className="text-gray-400 max-w-md  text-justify">
             EthioMarket.com, the best marketplace to buy and sell products and services among our customers. We passionately believe in great bargains and excellent services for buyers and sellers. Most importantly, we firmly believe in high-quality products and exceptional customer services.
           </p>
         </div>
@@ -14,31 +15,30 @@ const Footer = () => {
         <div className="mb-8 max-sm:text-center">
           <h4 className="text-lg font-bold mb-4 ">Useful Links</h4>
           <ul className="list-none">
-            <li><a href="#about" className="text-gray-400 hover:text-blue-500">Home</a></li>
-            <li><a href="#faq" className="text-gray-400 hover:text-blue-500">Cart</a></li>
-            <li><a href="#contact" className="text-gray-400 hover:text-blue-500">Orders</a></li>
-            <li><a href="#app" className="text-gray-400 hover:text-blue-500">LogIn</a></li>
-            <li><a href="#marketplace" className="text-gray-400 hover:text-blue-500">SignUp</a></li>
+            <li><Link href="/" className="text-gray-400 hover:text-blue-500">Home</Link></li>
+            <li><Link href="/cart" className="text-gray-400 hover:text-blue-500">Cart</Link></li>
+            <li><Link href="/orders" className="text-gray-400 hover:text-blue-500">Orders</Link></li>
+            <li><Link href="/login" className="text-gray-400 hover:text-blue-500">LogIn</Link></li>
+            <li><Link href="register" className="text-gray-400 hover:text-blue-500">SignUp</Link></li>
           </ul>
         </div>
 
         <div className="mb-8 max-sm:text-center">
           <h4 className="text-lg font-bold mb-4">Contact US</h4>
           <ul className="list-none">
-            <li><a href="#payment" className="text-gray-400 hover:text-blue-500">ethioMarket@qinash.com</a></li>
-            <li><a href="#shipping" className="text-gray-400 hover:text-blue-500">+251 903 295 555</a></li>
-            <li><a href="#terms" className="text-gray-400 hover:text-blue-500">Cape Verde St, The Place 3rd Floor</a></li>
+            <li><Link href="#payment" className="text-gray-400 hover:text-blue-500">ethioMarket@qinash.com</Link></li>
+            <li><Link href="#shipping" className="text-gray-400 hover:text-blue-500">+251 903 295 555</Link></li>
+            <li><Link href="#terms" className="text-gray-400 hover:text-blue-500">Cape Verde St, The Place 3rd Floor</Link></li>
           </ul>
         </div>
 
         <div className="mb-8 max-sm:text-center">
           <h4 className="text-lg font-bold mb-4">Social media</h4>
           <ul className="list-none">
-            <li><a href="#solutions" className="text-gray-400 hover:text-blue-500">Facebook</a></li>
-            <li><a href="#site-builder" className="text-gray-400 hover:text-blue-500">Instagram</a></li>
-            <li><a href="#erp" className="text-gray-400 hover:text-blue-500">Telegram</a></li>
-            <li><a href="#school" className="text-gray-400 hover:text-blue-500">Twitter</a></li>
-            <li><a href="#partner" className="text-gray-400 hover:text-blue-500">Ashewa</a></li>
+            <li><Link href="#solutions" className="text-gray-400 hover:text-blue-500">Facebook</Link></li>
+            <li><Link href="#site-builder" className="text-gray-400 hover:text-blue-500">Instagram</Link></li>
+            <li><Link href="#erp" className="text-gray-400 hover:text-blue-500">Telegram</Link></li>
+            <li><Link href="#school" className="text-gray-400 hover:text-blue-500">Twitter</Link></li>
           </ul>
         </div>
       </div>

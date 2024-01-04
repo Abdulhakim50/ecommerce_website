@@ -249,7 +249,7 @@ const Nav = ({currentUser}) => {
           ):(
       <>
         <li><Button/></li>
-        <li><a>View Orders</a></li>
+        <li><Link href='/orders'>View Orders</Link></li>
       </>
 
           )}

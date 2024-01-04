@@ -15,14 +15,17 @@ export default async function getSearchResults(query,currentPage,filterMin,filte
       
         name: {
           contains:query,
-          mode: 'insensitive', // Case-insensitive search
+          mode: 'insensitive', 
          },
          price: {
           gte: filterMin ? parseFloat(filterMin) : undefined,
           lte: filterMax ? parseFloat(filterMax) : undefined,
         },
        
-        
+       catagory:{
+        contains:filterCat,
+        mode: 'insensitive',
+      }
         },
       
       include: {

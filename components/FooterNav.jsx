@@ -9,6 +9,7 @@ import clsx from 'clsx'
 
 
 
+
 const FooterNav = ({ currentUser }) => {
   const router = useRouter()
   const pathname = usePathname()

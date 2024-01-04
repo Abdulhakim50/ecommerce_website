@@ -102,10 +102,10 @@ const Catagories = () => {
 Discover the Art of Elegance</p>
         
         </div>
-     <div className='max-w-[600px] '>
+     <div className='max-w-[700px] '>
       <Slider {...sliderSettings}>
         {heroSlider.map((hero)=>(
-            <p key={hero.label} className='max-w-[600px]  line text-green-900 bg-white p-5 text-2xl  rounded-lg text-center'>{hero.label}</p>
+            <p key={hero.label} className='w-[100%]  line text-green-500 italic bg-white p-5 text-2xl  rounded-lg text-center font-extrabold'>{hero.label}</p>
         ))}
         </Slider>
          </div>
