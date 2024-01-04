@@ -22,7 +22,7 @@ const ItemContent = ({item}) => {
                         className=' object-cover mb-4 md:mb-0 md:mr-4 rounded-lg'
 
                     />        
-        <p class="text-lg font-semibold">{item.name}</p>
+        <p class="text-lg font-semibold line-clamp-2">{item.name}</p>
         </div>
       </td>
       <td class="py-4 px-6 text-left border-b">{formatPrice(item.price)}</td>
