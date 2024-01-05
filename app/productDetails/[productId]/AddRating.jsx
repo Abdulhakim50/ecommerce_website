@@ -90,7 +90,7 @@ const AddRating = ({product,user}) => {
         errors={errors}
         required
         placeholder="Add your comment here..."
-        className="h-20 w-96 py-2" // Adjust the height and padding as needed
+        className="h-20 max-w-96 py-2" // Adjust the height and padding as needed
         userReview={userReview}
         deliverOrder={deliverOrder}
       />

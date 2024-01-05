@@ -12,7 +12,6 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const CategorySection = () => {
   const sliderSettings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
@@ -63,11 +62,11 @@ const CategorySection = () => {
                                     alt={cat.label}
                                     width={200}
                                     height={200}
-                                    className="w-full h-40 object-cover mb-2  group-hover:opacity-75 transition duration-300 ease-in-out"
+                                    className="w-full h-40 object-cover mb-2  group-hover:opacity-75 transition duration-300 ease-in-out rounded-md"
                                 />
                                
                                 <div className="text-center">
-                                    <p className="text-lg font-semibold mb-2 text-[#333333] text-[15.488px]">{cat.label}</p>
+                                    <p className="text-lg font-semibold mb-2 text-[#333333] text-[15.488px] line-clamp-1">{cat.label}</p>
                                 </div>
 
                             </div>

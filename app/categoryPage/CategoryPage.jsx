@@ -29,8 +29,8 @@ const CategoryPage = ({products,category}) => {
         </button>*/}
             </div>
             <h2 className="text-lg font-semibold mb-2 line-clamp-2">{product.name}</h2>
-            <p className="text-gray-600 mb-2">${product.price}</p>
-            <p className="text-gray-600">Category: {product.catagory}</p>
+            <p className="text-green-500 mb-2">${product.price}</p>
+            <p className="text-gray-600 max-sm:hidden">Category: {product.catagory}</p>
             <p className="text-gray-600">Reviews: {product.reviews.length}</p>
           </div>
         ))
