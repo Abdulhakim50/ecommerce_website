@@ -145,10 +145,7 @@ const Nav = ({currentUser}) => {
   <div className='categories-container gap-0'>
     {catagories.map((category) => (
       <div
-        onClick={() => 
-          
-          router.push(`/productDetails/${category.label}`)
-        }
+      onClick={()=>router.push(`/categoryPage?category=${category.label}`)}
         data-drawer-hide="drawer-example"
         key={category.label}
         value={category.label}
