@@ -147,7 +147,7 @@ const Nav = ({currentUser}) => {
       <div
         onClick={() => 
           
-          router.push(`/productDetails/${product.id}`)
+          router.push(`/productDetails/${category.label}`)
         }
         data-drawer-hide="drawer-example"
         key={category.label}
