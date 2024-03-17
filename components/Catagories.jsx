@@ -109,7 +109,7 @@ Discover the Art of Elegance</p>
         ))}
         </Slider>
          </div>
-       <button  className='bg-green-500 text-white p-3 hover:bg-green-900 '>Shop Now</button>
+       <Link href='/login'  className='bg-green-500 text-white p-3 hover:bg-green-900 '>Shop Now</Link>
     
       </div>
      </div>
