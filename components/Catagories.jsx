@@ -76,7 +76,7 @@ const Catagories = () => {
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 </svg>
 
-        <p className=' text-2xl font-extrabold text-green-500'>CATEGORIES</p>
+        <p className=' text-2xl font-extrabold text-green-500'>Catagories</p>
       
       </div> 
       <div className=' '>
